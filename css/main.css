@@ -1,6 +1,7 @@
 body {
     overflow-x: hidden;
 }
+
 #screen {
     position: absolute;
     left: 0;
@@ -9,7 +10,7 @@ body {
     background-color: #19202e;
 }
 
-.social ul{
+.social ul {
     display: flex;
     text-align: center;
     justify-content: center;
@@ -22,7 +23,7 @@ body {
     margin-top: 1rem;
     padding: 0.5rem 0.8rem;
     border-radius: 50%;
-    background-color: rgba(22,29,41,255);
+    background-color: rgba(22, 29, 41, 255);
 }
 
 .social ul li a {
@@ -79,7 +80,7 @@ body {
 
 #name {
     letter-spacing: 5px;
-    font-optical-sizing: auto;    
+    font-optical-sizing: auto;
     font-size: 2rem;
     font-family: "Pridi", serif;
     font-weight: 500;
@@ -116,6 +117,7 @@ body {
 .btn {
     background-color: rgb(254, 101, 92);
 }
+
 .line-button {
     position: relative;
     padding: 6px 13px;
@@ -125,13 +127,13 @@ body {
     cursor: pointer;
     color: rgba(254, 241, 254, 0.667);
     font-weight: 500;
-  }
-  
-  .line-button:hover {
+}
+
+.line-button:hover {
     background-color: rgb(227, 150, 62);
     color: #000;
     border-radius: 32px;
-  }
+}
 
 .line {
     display: block;
@@ -168,6 +170,7 @@ body {
     text-transform: uppercase;
     letter-spacing: 0.15rem;
 }
+
 .intro {
     padding-top: 1rem;
     color: rgb(165, 179, 206);
@@ -182,7 +185,7 @@ body {
     font-weight: 500;
     font-size: .9rem;
     background-color: rgb(229, 153, 67);
-    padding:0 0.8rem;
+    padding: 0 0.8rem;
     border-radius: 6px;
 }
 
@@ -201,35 +204,6 @@ body {
     color: rgb(165, 179, 206);
 }
 
-.white-dot-1 {
-    position: absolute;
-    padding-right: 12px;
-    color: #fff;
-    font-size: 1.3rem;
-}
-
-.white-dot-2 {
-    position: absolute;
-    padding-right: 12px;
-    color: #fff;
-    font-size: 1.3rem;
-}
-
-.white-dot-3 {
-    position: absolute;
-    padding-right: 12px;
-    color: #fff;
-    font-size: 1.3rem;
-}
-
-.timeline {
-    position: absolute;
-    left: 6.3%;
-    top: 38.8%;
-    border-left: 2px solid #3f5b91;
-    height: 950px;
-}
-
 .start {
     position: absolute;
     top: 81%;
@@ -239,7 +213,7 @@ body {
 
 .wing {
     font-family: "Inter", sans-serif;
-    background-color:rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.1);
     padding: 3px;
     font-size: 12px;
     border-radius: 4px;
@@ -249,9 +223,9 @@ body {
     color: rgb(0, 128, 0);
 }
 
-.truemoney{
+.truemoney {
     font-family: "Inter", sans-serif;
-    background-color:rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.1);
     padding: 3px;
     font-size: 12px;
     font-weight: bold;
@@ -261,7 +235,7 @@ body {
     color: rgb(227, 150, 62)
 }
 
-.school{
+.school {
     font-family: "Pridi", serif;
     font-size: .8rem;
     color: #fafafa;
@@ -284,13 +258,16 @@ body {
     animation: glow 2s ease-in-out infinite;
     background-color: transparent;
 }
+
 @keyframes glow {
     0% {
         box-shadow: 0 0 10px 5px rgba(0, 255, 0, 0.7);
     }
+
     50% {
         box-shadow: 0 0 20px 10px rgba(0, 255, 0, 0.7);
     }
+
     100% {
         box-shadow: 0 0 10px 5px rgba(0, 255, 0, 0.7);
     }
@@ -302,6 +279,7 @@ body {
     align-items: center;
     padding-top: 1rem;
 }
+
 .role_title_div {
     display: grid;
     grid-template-columns: 33% 33% 33%;
@@ -317,9 +295,9 @@ body {
 
 .role_title_div p {
     background-color: rgba(0, 0, 0, 0.1);
-    color:rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.8);
     text-align: center;
-    font-size:0.8rem;
+    font-size: 0.8rem;
     padding: 2px 9px;
     border-radius: 12px;
     font-weight: 500;
@@ -332,8 +310,9 @@ body {
 }
 
 .role_base div span p {
-    color:rgba(255, 255, 255, 0.8);
-    width: 30%; /* Adjust this value based on your requirements */
+    color: rgba(255, 255, 255, 0.8);
+    width: 30%;
+    /* Adjust this value based on your requirements */
     margin: 10px;
     padding: 10px;
     background-color: #f0f0f0;
@@ -363,6 +342,7 @@ body {
     margin-top: 14px;
     display: flex;
 }
+
 .column_lang {
     width: 40px;
     height: 20px;
@@ -370,6 +350,7 @@ body {
     background-color: #3f5b91;
     margin: 0 2px;
 }
+
 .column_lang_bright {
     width: 40px;
     height: 20px;
@@ -387,7 +368,7 @@ body {
 }
 
 .body-terminal {
-    background-color:  #1e2738;
+    background-color: #1e2738;
     color: #FF7A59;
     font-family: 'Courier New', Courier, monospace;
     justify-content: center;
@@ -430,7 +411,7 @@ body {
 .animation {
     font-size: 20px;
     color: #0f0;
-} 
+}
 
 .shaking-image {
     width: 200px;
@@ -438,13 +419,24 @@ body {
 }
 
 @keyframes shake {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: rotate(0deg);
     }
-    10%, 30%, 50%, 70%, 90% {
+
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
         transform: rotate(-2deg);
     }
-    20%, 40%, 60%, 80% {
+
+    20%,
+    40%,
+    60%,
+    80% {
         transform: rotate(2deg);
     }
 }
