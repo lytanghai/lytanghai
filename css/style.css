@@ -114,7 +114,8 @@ body {
     'social-contact social-contact'
     'about-me education'
     'work-experience tech-stack'
-    'language references';
+    'language references'
+    'announcement announcement';
     gap: 0px;
     grid-gap: 0px;
     background-color: var(--container-bg);
@@ -134,7 +135,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 24px;
     margin-top: 0.7%;
 }
 
@@ -142,7 +142,19 @@ body {
     color: var(--social-network);
     cursor: pointer;
     padding:0 3%;
+    padding-top: 12px;
     list-style: none;
+    letter-spacing: .10rem;
+    font-size: 1rem;
+}
+
+#resume {
+    width: auto;
+    height: auto;
+    background-color: var(--degree);
+    border-radius: 12px;
+    font-size: 12px;
+
 }
 
 #social-contact .item a {
@@ -166,6 +178,7 @@ body {
 }
 
 #about-me p {
+    text-indent: 8px;
     font-size: 14px;
     color: var(--grid-color);
     letter-spacing: .1rem;
@@ -311,7 +324,8 @@ body {
     line-height: 1.2rem;
     text-align: center;
     border-radius: 6px;
-    height: 20px;
+    height: 26px;
+    padding-top: 2px;
     text-transform: capitalize;
 }
 
@@ -402,6 +416,28 @@ body {
     margin-left: 7%;
     font-size: 0.75rem; 
     margin-top: -12px;
+}
+
+#announcement {
+    grid-area: announcement;
+    padding: 0 3%;
+    width: 94%;
+    border-bottom: 1px solid var(--white);  
+}
+
+#announcement h3 {
+    color: var(--white);
+    letter-spacing: .15rem;
+    font-weight: 900;
+}
+
+#announcement h5 {
+    color: var(--white);
+}
+
+.work-status {
+    color: var(--dark);
+    background-color: var(--degree);
 }
 
 .ghost {

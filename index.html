@@ -89,11 +89,11 @@
                 </div>
                 <div class="item"><a href="tel:+855 93 606 872"> <i class="fa fa-phone bigger-icon"
                             aria-hidden="true"></i> <span id="transparent">+855 93 606 872</span> </a></div>
+                        
                 <div class="item"><a href="assets/Ly_Tanghai_CV.pdf"><i
                             class="fas fa-file-download fa-fw bigger-icon"></i>
-                        <span id="transparent">Resume(CV)</span>
-                    </a></span>
-                    </a></div>
+                        <span id="transparent">Resume(CV)</span></a>
+                </div>
             </div>
         </div>
 
@@ -187,13 +187,11 @@
             <div class="role_base">
                 <p class="role_base_title">Backend</p>
                 <div class="role_title_div">
-                    <p>Java</p>
-                    <p>API Development</p>
-                    <p>Spring</p>
-                    <p>Spring Boot</p>
+                    <p>Java & GoLang</p>
+                    <p>API Development & Microservice</p>
+                    <p>Spring & Spring Boot</p>
                     <p>Message Queue</p>
-                    <p>Microservice</p>
-                    <p>SQL</p>
+                    <p>Relational & Non Relational Database</p>
                     <p>SDLC</p>
                     <p>System Integration</p>
                 </div>
@@ -214,12 +212,12 @@
                     <p>System Design</p>
                     <p>Agile Scrum</p>
                     <p>Clean Code</p>
-                    <p>OOP</p>
-                    <p>Web Hosting</p>
+                    <p>OOP Concept</p>
                     <p>In-Memory Storage</p>
                     <p>Cloud Computing</p>
                     <p>Design Pattern</p>
-                    <p>Intermediate Web Design</p>
+                    <p>RESTful API & SOAP API</p>
+                    <p>Web Design & Hosting</p>
                 </div>
             </div>
         </div>
@@ -253,23 +251,51 @@
                     <h5 class="reference_prop"><i class="fa-solid fa-phone"></i> Mobile Phone : +855 92 789 294</h5>
                     <h5 class="reference_prop"><i class="fa-solid fa-envelope"></i> E-mail : c.rithysak81@gmail.com</h5>
         </div>
+        <div id="announcement">
+            <h3><i class="fa-solid fa-scroll"></i> Information</h3>
+            <h5>Runtime: <span id="runtime"></span></h5>
+            <h5>Status: <span class="work-status">OPEN TO WORK</span></h5> 
+        </div>
     </div>
 
-    <!-- <div class="body-terminal">
-        <div class="terminal">
-            <div class="terminal-header">
-                <div class="prompt">tanghai.ly</div>
-                <div class="command-line">@ubuntu-desktop: ~ /var/log/syslog</div>
-            </div>
-            <div class="terminal-body">
-                <div class="output">Start Working at Wing Bank For:<span class="animation" id="dots">...</span>
-                </div>
-                <div class="output">
-                    <p id="runtime"></p>
-                </div>
-                <img src="assets/images/image.png" alt="Shaking Image" class="shaking-image">
-            </div>
-        </div>
-    </div> -->
 </body>
+<script>
+    function updateAge(creationDateString) {
+    const creationDate = new Date(creationDateString);
+    const currentDate = new Date();
+
+    const ageInMilliseconds = currentDate - creationDate;
+    const seconds = Math.floor(ageInMilliseconds / 1000);
+    const minutes = Math.floor(seconds / 60);
+    const hours = Math.floor(minutes / 60);
+    const days = Math.floor(hours / 24);
+    const months = Math.floor(days / 30.44);
+    const years = Math.floor(days / 365);
+
+    const remainingMonths = Math.floor((days % 365) / 30.44);
+    const remainingDays = Math.floor(days % 30.44);
+    const remainingHours = Math.floor(hours % 24);
+    const remainingMinutes = Math.floor(minutes % 60);
+    const remainingSeconds = Math.floor(seconds % 60);
+
+    let ageString = '';
+
+    if (years > 0) {
+        ageString += `${years} YEAR${years > 1 ? 'S' : ''}, `;
+    }
+
+    if (months > 0 && years < 1) {
+        ageString += `${months} MONTH${months > 1 ? 'S' : ''}, `;
+    }
+
+    ageString += `${remainingDays} DAY${remainingDays !== 1 ? 'S' : ''}, ${remainingHours} HOUR${remainingHours !== 1 ? 'S' : ''}, ${remainingMinutes} MINUTE${remainingMinutes !== 1 ? 'S' : ''}, ${remainingSeconds} SECOND${remainingSeconds !== 1 ? 'S' : ''}`;
+
+    document.getElementById('runtime').innerText = ageString;
+}
+
+var date = '2024-10-18T17:00:00.000';
+updateAge(date);
+setInterval(() => updateAge(date), 1000);
+
+</script>
 </html>
