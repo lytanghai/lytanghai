@@ -72,7 +72,9 @@ body {
     border-radius: 50%;
     margin: 0 auto 20px;
     margin-top: 15%;
-    background-color: #ccc;
+    background-image: url('../assets/images/profile.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
     z-index: 1;
 }
 
@@ -112,7 +114,7 @@ body {
     'social-contact social-contact'
     'about-me education'
     'work-experience tech-stack'
-    'language project';
+    'language references';
     gap: 0px;
     grid-gap: 0px;
     background-color: var(--container-bg);
@@ -146,8 +148,9 @@ body {
 #social-contact .item a {
     font-size: 1rem;
     text-decoration: none;
-    color: var(--white);
-    font-family: "Inter", "Inter Placeholder", sans-serif;
+    font-family: var(--font-primary);
+    font-weight: 600;
+    color: var(--social-network);
 }
 
 #about-me {
@@ -183,6 +186,7 @@ body {
     align-items: center;
     text-align: center;
     border-bottom: 1px solid var(--white);
+    font-size: 1rem;
 }
 
 #education h3{
@@ -260,7 +264,7 @@ body {
     padding: 3px;
     font-size: 12px;
     border-radius: 4px;
-    left: 46.5%;
+    left: 42.5%;
     font-weight: bold;
     position: absolute;
     color: rgb(0, 128, 0);
@@ -273,7 +277,7 @@ body {
     font-size: 12px;
     font-weight: bold;
     border-radius: 4px;
-    left: 41.5%;
+    left: 36%;
     position: absolute;
     color: rgb(227, 150, 62)
 }
@@ -372,16 +376,32 @@ body {
     margin: 0 2px;
 }
 
-#project {
-    grid-area: project;
+#references {
+    grid-area: references;
     padding: 0 3%;
     width: 94%;
+    border-bottom: 1px solid var(--white);
 }
 
-#project h3 {
+#references h3 {
     color: var(--white);
     letter-spacing: .15rem;
     font-weight: 900;
+}
+
+#references h5 {
+    color: var(--white);
+}
+
+.referer {
+    margin-left: 7%;
+    font-size: 1rem;
+}
+
+.reference_prop {
+    margin-left: 7%;
+    font-size: 0.75rem; 
+    margin-top: -12px;
 }
 
 .ghost {

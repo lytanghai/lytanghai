@@ -1,53 +1,156 @@
-/* @media only screen and (min-width: 640px) {...} */
-
-/* Medium devices such as tablets (768px and up) */
-/* @media only screen and (min-width: 768px) {...} */
-
-/* Large devices such as laptops (1024px and up) */
-/* @media only screen and (min-width: 1024px) {...} */
-
-/* Largest devices such as desktops (1280px and up) */
-
-@media only screen and (min-width: 1280px) {
-    .profile {
-        top: 4%;
+@media (max-width: 768px) {
+    /* 481 -> 768 */
+    #navigation {
+        padding-top: 3%
     }
 
-    /* .profile_intro {
-        padding-top: 15%;
-    } */
-
-    .subject {
-        font-size: 10px;
-    }
-
-    .white-dot-1 {
-        top:37.6%;
-        left: 5.8%;
+    .nav-item {
+        font-size: 22px;
     }
     
-    .white-dot-2 {
-        top:55.5%;
-        left: 5.8%;
+    #profile {
+        margin-top: -8%;
     }
     
-    .white-dot-3 {
-        top:75.9%;
-        left: 5.8%;
+    
+    .profile-pic {
+        width: 125px;
+        height: 125px;
     }
     
-    .timeline {
-        left: 6.8%;
-        top:38.5%;
+    .profile-name {
+        letter-spacing: 5px;
+        font-size: 1.5rem;
+        font-weight: 600;
+        font-style: normal;
+        margin-top: -1%;
     }
     
-    .terminal {
-        width: 100%;
-        height: 200px;
+    .profile-info {
+        font-size: 1.25rem;
+        letter-spacing: 5px;
+    }
+
+    .grid-container {
+        top:45%;
+        grid-template-areas:
+        'social-contact'
+        'about-me'
+        'tech-stack'
+        'work-experience'
+        'education'
+        'language'
+        'project';
+    }
+
+    #social-contact {
+        height: 10px; 
+        padding: 5% 0;
+    }
+    
+    #social-contact .items {
+        margin: -16px auto;
+    }
+    
+    #social-contact .item {
+        padding: 6px 0 ;
+    }
+
+    #social-contact .item a {
+        padding: 0 24px;
+    }
+
+    .bigger-icon{
+        font-size: 1.5rem;
+    }
+    .hidden {
+        visibility: hidden;
+        opacity: 0;
+    }
+    
+    #transparent {
+        font-size: 0px;
+        color: transparent;
+    }
+
+}
+
+@media (max-width: 480px) {
+    #navigation {
+        padding-top: 3%
+    }
+
+    .nav-item {
+        font-size: 22px;
+    }
+    
+    #profile {
+        margin-top: -8%;
+    }
+    
+    .grid-container {
+        top:45%;
+        grid-template-areas:
+        'social-contact'
+        'about-me'
+        'tech-stack'
+        'work-experience'
+        'education'
+        'language'
+        'project';
+    }
+    
+    .profile-pic {
+        width: 125px;
+        height: 125px;
+    }
+    
+    .profile-name {
+        letter-spacing: 5px;
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-top: -1%;
+    }
+    
+    .profile-info {
+        font-size: 1.25rem;
+        letter-spacing: 5px;
+    }
+
+    #social-contact {
+        height: 50px; 
+        padding: 1% 0;
+    }
+    
+    #social-contact .items {
+        font-size: 12px;
+        margin-top: 0.7%;
+    }
+    
+    #social-contact .item {
+        padding: 6px 0 ;
+    }
+
+    #social-contact .item a {
+        font-size: 12px;
+        padding: 0 24px;
+    }
+
+    .bigger-icon{
+        font-size: 2rem;
+    }
+    .hidden {
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    #transparent {
+        font-size: 0px;
+        color: transparent;
     }
 }
 
-@media (max-width: 1279px) {
+@media (max-width: 374px) {
     * {
         display: none;
     }
