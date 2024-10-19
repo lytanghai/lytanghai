@@ -1,0 +1,442 @@
+body {
+    overflow-x: hidden;
+}
+
+#screen {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-color: #19202e;
+}
+
+.social ul {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+.social ul li {
+    color: #fff;
+    margin-top: 1rem;
+    padding: 0.5rem 0.8rem;
+    border-radius: 50%;
+    background-color: rgba(22, 29, 41, 255);
+}
+
+.social ul li a {
+    color: rgb(165, 179, 206);
+    font-size: 1rem;
+}
+
+#container {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 67%;
+    background-color: #1e2738;
+    left: 17.5%;
+    margin-top: -5%;
+}
+
+.profile {
+    position: relative;
+    /* top: 3%; */
+    left: 45.5%;
+    z-index: 1;
+}
+
+.profile .profile_outer {
+    width: 11.2rem;
+    height: 10rem;
+    border: 10px solid #1e2738;
+    border-radius: 50%;
+}
+
+.profile .profile_outer img {
+    background: #FF7A59;
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.profile_intro {
+    padding-top: 8%;
+    padding-left: 2%;
+    padding-top: 10%;
+    display: block;
+    margin-top: 1rem;
+    color: #fafafa;
+    align-items: center;
+    text-align: center;
+    justify-self: center;
+}
+
+#name {
+    letter-spacing: 5px;
+    font-optical-sizing: auto;
+    font-size: 2rem;
+    font-family: "Pridi", serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+#position {
+    color: #5f7db5;
+    font-size: 1.2rem;
+    font-family: "Pridi", serif;
+    font-weight: 500;
+    font-style: normal;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+.contact_list {
+    align-items: center;
+    text-align: center;
+    justify-self: center;
+    margin: 20px;
+}
+
+.contact_list span a {
+    padding: 2rem;
+    color: rgba(254, 241, 254, 0.667);
+    text-decoration: none;
+}
+
+.contact_list span a:hover {
+    color: #000;
+}
+
+.btn {
+    background-color: rgb(254, 101, 92);
+}
+
+.line-button {
+    position: relative;
+    padding: 6px 13px;
+    border: none;
+    background-color: transparent;
+    font-size: 16px;
+    cursor: pointer;
+    color: rgba(254, 241, 254, 0.667);
+    font-weight: 500;
+}
+
+.line-button:hover {
+    background-color: rgb(227, 150, 62);
+    color: #000;
+    border-radius: 32px;
+}
+
+.line {
+    display: block;
+    border-top: 1px;
+    background-color: #fafafa;
+    width: 90%;
+    height: 1px;
+    margin-left: 5%;
+    margin-top: 10px;
+}
+
+.box-container {
+    margin-top: 1;
+    display: grid;
+    grid-template-columns: 65% auto;
+    gap: 1px;
+    background-color: #e9d8d8;
+}
+
+.box-container>.box {
+    background-color: #1e2738;
+}
+
+.box {
+    padding: 30px 50px;
+}
+
+.box h3 {
+    font-family: "Inter", sans-serif;
+    font-weight: 900;
+    font-size: 18px;
+    color: #fff;
+    line-height: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15rem;
+}
+
+.intro {
+    padding-top: 1rem;
+    color: rgb(165, 179, 206);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: start;
+}
+
+.date {
+    color: #000;
+    font-weight: 500;
+    font-size: .9rem;
+    background-color: rgb(229, 153, 67);
+    padding: 0 0.8rem;
+    border-radius: 6px;
+}
+
+.box h5 {
+    color: #fff;
+    padding-top: 6px;
+    padding-left: 2rem;
+}
+
+.box ul {
+    margin-left: 2rem;
+    list-style: circle;
+}
+
+.box ul li {
+    color: rgb(165, 179, 206);
+}
+
+.start {
+    position: absolute;
+    top: 81%;
+    left: 3.6%;
+    width: 50px;
+}
+
+.wing {
+    font-family: "Inter", sans-serif;
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 3px;
+    font-size: 12px;
+    border-radius: 4px;
+    left: 56.5%;
+    font-weight: bold;
+    position: absolute;
+    color: rgb(0, 128, 0);
+}
+
+.truemoney {
+    font-family: "Inter", sans-serif;
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 3px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 4px;
+    left: 49.6%;
+    position: absolute;
+    color: rgb(227, 150, 62)
+}
+
+.school {
+    font-family: "Pridi", serif;
+    font-size: .8rem;
+    color: #fafafa;
+}
+
+.subject {
+    font-family: "Pridi", serif;
+    color: #000;
+    font-size: 12px;
+    background-color: rgb(229, 153, 67);
+    padding: 0 6px;
+    border-radius: 6px;
+}
+
+#academic {
+    margin-left: 1.5rem;
+}
+
+.light {
+    animation: glow 2s ease-in-out infinite;
+    background-color: transparent;
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 10px 5px rgba(0, 255, 0, 0.7);
+    }
+
+    50% {
+        box-shadow: 0 0 20px 10px rgba(0, 255, 0, 0.7);
+    }
+
+    100% {
+        box-shadow: 0 0 10px 5px rgba(0, 255, 0, 0.7);
+    }
+}
+
+.role_base {
+    box-sizing: border-box;
+    display: block;
+    align-items: center;
+    padding-top: 1rem;
+}
+
+.role_title_div {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-gap: 0.2px;
+}
+
+.role_base div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.role_title_div p {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    font-size: 0.8rem;
+    padding: 2px 9px;
+    border-radius: 12px;
+    font-weight: 500;
+}
+
+.role_base div span {
+    background-color: rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: auto;
+}
+
+.role_base div span p {
+    color: rgba(255, 255, 255, 0.8);
+    width: 30%;
+    /* Adjust this value based on your requirements */
+    margin: 10px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    text-align: center;
+
+}
+
+.role_base_title {
+    font-family: 'Inter', sans-serif;
+    color: rgb(165, 179, 206);
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    line-height: 1.2rem;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.language {
+    font-family: "Inter", sans-serif;
+    color: #fafafa;
+    font-weight: bolder;
+    font-size: 1rem;
+}
+
+.column_lang_div {
+    margin-top: 14px;
+    display: flex;
+}
+
+.column_lang {
+    width: 40px;
+    height: 20px;
+    border-radius: 8px;
+    background-color: #3f5b91;
+    margin: 0 2px;
+}
+
+.column_lang_bright {
+    width: 40px;
+    height: 20px;
+    border-radius: 8px;
+    background-color: #969ba5;
+    margin: 0 2px;
+}
+
+.column_lang_bright_half {
+    width: 40px;
+    height: 20px;
+    border-radius: 8px;
+    background: linear-gradient(to right, #3f5b91, #969ba5 100%);
+    margin: 0 2px;
+}
+
+.body-terminal {
+    background-color: #1e2738;
+    color: #FF7A59;
+    font-family: 'Courier New', Courier, monospace;
+    justify-content: center;
+    align-items: center;
+}
+
+.terminal {
+    background-color: #000;
+    border: 2px solid #0f0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.terminal-header {
+    height: 30px;
+    background-color: #222;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.terminal-body {
+    height: calc(100% - 30px);
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.prompt {
+    color: #FF7A59;
+}
+
+.command {
+    color: #0f0;
+}
+
+.output {
+    color: #0f0;
+}
+
+.animation {
+    font-size: 20px;
+    color: #0f0;
+}
+
+.shaking-image {
+    width: 200px;
+    animation: shake 5s ease infinite;
+}
+
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: rotate(0deg);
+    }
+
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        transform: rotate(-2deg);
+    }
+
+    20%,
+    40%,
+    60%,
+    80% {
+        transform: rotate(2deg);
+    }
+}

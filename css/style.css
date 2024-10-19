@@ -28,14 +28,6 @@ body {
     font-family: var(--font-primary);
 }
 
-#navigation {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 1%;
-    z-index: 100;
-}
-
 .nav-bar {
     display: flex;
     justify-content: center;
@@ -44,7 +36,7 @@ body {
 
 .nav-item a {
     font-size: 18px;
-    margin: 0 15px; 
+    margin: 0 15px;
     color: var(--social-network);
     cursor: pointer;
 }
@@ -102,7 +94,7 @@ body {
 
 .grid-container {
     position: absolute;
-    top:43%;
+    top: 43%;
     left: 19%;
     width: 60%;
     height: auto;
@@ -111,23 +103,31 @@ body {
     grid-template-rows: 1fr auto;
     grid-template-columns: 1fr auto;
     grid-template-areas:
-    'social-contact social-contact'
-    'about-me education'
-    'work-experience tech-stack'
-    'language references'
-    'announcement announcement';
+        'navigation navigation'
+        'social-contact social-contact'
+        'about-me education'
+        'work-experience tech-stack'
+        'language references'
+        'announcement announcement';
     gap: 0px;
     grid-gap: 0px;
     background-color: var(--container-bg);
     z-index: 0;
 }
 
+#navigation {
+    grid-area: navigation;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
 #social-contact {
     grid-area: social-contact;
-    border-top: 1px solid var(--white); 
-    border-bottom: 1px solid var(--white); 
-    height: 50px; 
-    margin-top: -1.6%;
+    border-top: 1px solid var(--white);
+    border-bottom: 1px solid var(--white);
+    height: 50px;
+    margin-top: 3%;
     padding: 1% 0;
 }
 
@@ -141,7 +141,7 @@ body {
 #social-contact .item {
     color: var(--social-network);
     cursor: pointer;
-    padding:0 3%;
+    padding: 0 3%;
     padding-top: 12px;
     list-style: none;
     letter-spacing: .10rem;
@@ -192,7 +192,7 @@ body {
     grid-area: education;
     padding-left: 5%;
     border-left: 1px solid var(--white);
-    width:100%;
+    width: 100%;
     font-family: var(--font-subject);
     color: var(--white);
     justify-content: center;
@@ -202,7 +202,7 @@ body {
     font-size: 1rem;
 }
 
-#education h3{
+#education h3 {
     letter-spacing: .15rem;
     font-weight: 900;
     color: var(--white);
@@ -302,7 +302,7 @@ body {
     border-bottom: 1px solid var(--white);
 }
 
-#tech-stack h3{
+#tech-stack h3 {
     color: var(--white);
     letter-spacing: .15rem;
     font-weight: 900;
@@ -353,6 +353,7 @@ body {
     letter-spacing: .15rem;
     font-weight: 900;
 }
+
 .language_title {
     color: var(--white);
     letter-spacing: .15rem;
@@ -414,15 +415,20 @@ body {
 
 .reference_prop {
     margin-left: 7%;
-    font-size: 0.75rem; 
+    font-size: 0.75rem;
     margin-top: -12px;
+}
+
+.phone {
+    color: var(--white);
+    text-decoration: none;
 }
 
 #announcement {
     grid-area: announcement;
     padding: 0 3%;
     width: 94%;
-    border-bottom: 1px solid var(--white);  
+    border-bottom: 1px solid var(--white);
 }
 
 #announcement h3 {
@@ -433,10 +439,14 @@ body {
 
 #announcement h5 {
     color: var(--white);
+    font-size: 1rem;
 }
 
 .work-status {
     color: var(--dark);
+    font-size: 1rem;
+    border-radius: 12px;
+    padding: 6px;
     background-color: var(--degree);
 }
 
@@ -447,14 +457,17 @@ body {
     left: calc(50% - 100px);
     width: 200px;
     height: 200px;
-    animation: moveLeftRight 15s linear infinite;  
-  }
+    animation: moveLeftRight 15s linear infinite;
+}
 
 
 @keyframes moveLeftRight {
-    0%, 100% {
+
+    0%,
+    100% {
         left: 0;
     }
+
     50% {
         left: calc(100% - 50px);
     }

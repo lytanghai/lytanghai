@@ -66,19 +66,26 @@
             </div>
         </div>
     </div>
-    <div id="navigation">
-        <div class="nav-bar">
-            <div class="nav-item"><a href="https://u.wechat.com/kKlzLqIdoCkb5kuPjazcquw?s=2"><i
-                        class="fab fa-weixin"></i></a></div>
-            <div class="nav-item"><a href="https://t.me/lytanghaii"><i class="fa-brands fa-telegram"></i></a></div>
-            <div class="nav-item"><a href="http://linkedin.com/in/tanghai-ly"> <i class="fa-brands fa-linkedin"></i></a>
-            </div>
-            <div class="nav-item"><a href="https://wa.link/usaxij"><i class="fa-brands fa-whatsapp"></i></a></div>
-            <div class="nav-item"><a href="https://line.me/ti/p/EGRgQCcvFg"><i class="fa-brands fa-line"></i></a></div>
-        </div>
-    </div>
-
     <div class="grid-container">
+
+        <div id="navigation">
+            <div class="items">
+                <div class="nav-bar">
+                    <div class="nav-item"><a href="https://u.wechat.com/kKlzLqIdoCkb5kuPjazcquw?s=2"><i
+                                class="fab fa-weixin"></i></a></div>
+                    <div class="nav-item"><a href="https://t.me/lytanghaii"><i class="fa-brands fa-telegram"></i></a>
+                    </div>
+                    <div class="nav-item"><a href="http://linkedin.com/in/tanghai-ly"> <i
+                                class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                    <div class="nav-item"><a href="https://wa.link/usaxij"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                    <div class="nav-item"><a href="https://line.me/ti/p/EGRgQCcvFg"><i
+                                class="fa-brands fa-line"></i></a></div>
+                </div>
+            </div>
+        </div>
+
         <div id="social-contact">
             <div class="items">
                 <div class="item">
@@ -89,7 +96,7 @@
                 </div>
                 <div class="item"><a href="tel:+855 93 606 872"> <i class="fa fa-phone bigger-icon"
                             aria-hidden="true"></i> <span id="transparent">+855 93 606 872</span> </a></div>
-                        
+
                 <div class="item"><a href="assets/Ly_Tanghai_CV.pdf"><i
                             class="fas fa-file-download fa-fw bigger-icon"></i>
                         <span id="transparent">Resume(CV)</span></a>
@@ -136,8 +143,9 @@
         <div id="work-experience">
             <h3><i class="fa fa-briefcase" aria-hidden="true"></i> Work Experience</h3>
             <br>
-            <span class="date"><i class="fa fa-table" aria-hidden="true"></i> May, 2024 - Present <span class="wing">Wing Bank</span></span>
-            
+            <span class="date"><i class="fa fa-table" aria-hidden="true"></i> May, 2024 - Present <span
+                    class="wing">Wing Bank</span></span>
+
             <br><br>
             <h5>Backend Developer</h5>
             <ul>
@@ -246,56 +254,61 @@
 
         <div id="references">
             <h3><i class="fa-solid fa-user-tie"></i> References</h3>
-                    <h5 class="referer">Mr. Sethacheyrithysak Chan</h5>
-                    <h5 class="reference_prop"><i class="fa-solid fa-briefcase"></i> Position: Senior DevOps Engineer</h5>
-                    <h5 class="reference_prop"><i class="fa-solid fa-phone"></i> Mobile Phone : +855 92 789 294</h5>
-                    <h5 class="reference_prop"><i class="fa-solid fa-envelope"></i> E-mail : c.rithysak81@gmail.com</h5>
+            <h5 class="referer">Mr. Sethacheyrithysak Chan</h5>
+            <h5 class="reference_prop"><i class="fa-solid fa-people-line"></i> Position: Senior DevOps Engineer</h5>
+            <h5 class="reference_prop"><i class="fa-solid fa-phone"></i> Mobile Phone : <a href="tel:+855 92 789 294"
+                    class="phone">
+                    +855 92 789 294 </a>
+
+            </h5>
+            <h5 class="reference_prop"><i class="fa-solid fa-envelope"></i> E-mail : c.rithysak81@gmail.com</h5>
         </div>
         <div id="announcement">
             <h3><i class="fa-solid fa-scroll"></i> Information</h3>
-            <h5>Runtime: <span id="runtime"></span></h5>
-            <h5>Status: <span class="work-status">OPEN TO WORK</span></h5> 
+            <h5>Status: <span class="work-status">OPEN TO WORK</span></h5>
         </div>
     </div>
+    <!-- <h5 style="color: red">Runtime: <span id="runtime"></span></h5> -->
 
 </body>
 <script>
     function updateAge(creationDateString) {
-    const creationDate = new Date(creationDateString);
-    const currentDate = new Date();
+        const creationDate = new Date(creationDateString);
+        const currentDate = new Date();
 
-    const ageInMilliseconds = currentDate - creationDate;
-    const seconds = Math.floor(ageInMilliseconds / 1000);
-    const minutes = Math.floor(seconds / 60);
-    const hours = Math.floor(minutes / 60);
-    const days = Math.floor(hours / 24);
-    const months = Math.floor(days / 30.44);
-    const years = Math.floor(days / 365);
+        const ageInMilliseconds = currentDate - creationDate;
+        const seconds = Math.floor(ageInMilliseconds / 1000);
+        const minutes = Math.floor(seconds / 60);
+        const hours = Math.floor(minutes / 60);
+        const days = Math.floor(hours / 24);
+        const months = Math.floor(days / 30.44);
+        const years = Math.floor(days / 365);
 
-    const remainingMonths = Math.floor((days % 365) / 30.44);
-    const remainingDays = Math.floor(days % 30.44);
-    const remainingHours = Math.floor(hours % 24);
-    const remainingMinutes = Math.floor(minutes % 60);
-    const remainingSeconds = Math.floor(seconds % 60);
+        const remainingMonths = Math.floor((days % 365) / 30.44);
+        const remainingDays = Math.floor(days % 30.44);
+        const remainingHours = Math.floor(hours % 24);
+        const remainingMinutes = Math.floor(minutes % 60);
+        const remainingSeconds = Math.floor(seconds % 60);
 
-    let ageString = '';
+        let ageString = '';
 
-    if (years > 0) {
-        ageString += `${years} YEAR${years > 1 ? 'S' : ''}, `;
+        if (years > 0) {
+            ageString += `${years} YEAR${years > 1 ? 'S' : ''}, `;
+        }
+
+        if (months > 0 && years < 1) {
+            ageString += `${months} MONTH${months > 1 ? 'S' : ''}, `;
+        }
+
+        ageString += `${remainingDays} DAY${remainingDays !== 1 ? 'S' : ''}, ${remainingHours} HOUR${remainingHours !== 1 ? 'S' : ''}, ${remainingMinutes} MINUTE${remainingMinutes !== 1 ? 'S' : ''}, ${remainingSeconds} SECOND${remainingSeconds !== 1 ? 'S' : ''}`;
+
+        document.getElementById('runtime').innerText = ageString;
     }
 
-    if (months > 0 && years < 1) {
-        ageString += `${months} MONTH${months > 1 ? 'S' : ''}, `;
-    }
-
-    ageString += `${remainingDays} DAY${remainingDays !== 1 ? 'S' : ''}, ${remainingHours} HOUR${remainingHours !== 1 ? 'S' : ''}, ${remainingMinutes} MINUTE${remainingMinutes !== 1 ? 'S' : ''}, ${remainingSeconds} SECOND${remainingSeconds !== 1 ? 'S' : ''}`;
-
-    document.getElementById('runtime').innerText = ageString;
-}
-
-var date = '2024-10-18T17:00:00.000';
-updateAge(date);
-setInterval(() => updateAge(date), 1000);
+    var date = '2024-10-18T17:00:00.000';
+    updateAge(date);
+    setInterval(() => updateAge(date), 1000);
 
 </script>
+
 </html>

@@ -1,4 +1,21 @@
+:root {
+    --bg: #19202e;
+    --white: #fff;
+    --dark: #000;
+    --position-color: #9aa9c3;
+    --grid-color: #a5b3ce;
+    --social-network: rgb(165, 179, 206);
+    --container-bg: #1e2738;
+    --contact-network: rgba(254, 241, 254, 0.667);
+    --wing: rgb(0, 128, 0);
+    --truemoney: rgb(227, 150, 62);
+    --degree: rgb(229, 153, 67);
+    --font-subject: "Pridi", serif;
+    --font-primary: "Inter", sans-serif;
+}
+
 @media (max-width: 768px) {
+
     /* 481 -> 768 */
     #navigation {
         padding-top: 3%
@@ -7,17 +24,16 @@
     .nav-item {
         font-size: 22px;
     }
-    
+
     #profile {
         margin-top: -8%;
     }
-    
-    
+
     .profile-pic {
         width: 125px;
         height: 125px;
     }
-    
+
     .profile-name {
         letter-spacing: 5px;
         font-size: 1.5rem;
@@ -25,120 +41,144 @@
         font-style: normal;
         margin-top: -1%;
     }
-    
+
     .profile-info {
         font-size: 1.25rem;
         letter-spacing: 5px;
     }
 
     .grid-container {
-        top:45%;
+        top: 45%;
         grid-template-areas:
-        'social-contact'
-        'about-me'
-        'tech-stack'
-        'work-experience'
-        'education'
-        'language'
-        'project';
+            'social-contact'
+            'about-me'
+            'tech-stack'
+            'work-experience'
+            'education'
+            'language'
+            'project';
     }
 
     #social-contact {
-        height: 10px; 
+        height: 10px;
         padding: 5% 0;
     }
-    
+
     #social-contact .items {
         margin: -16px auto;
     }
-    
+
     #social-contact .item {
-        padding: 6px 0 ;
+        padding: 6px 0;
     }
 
     #social-contact .item a {
         padding: 0 24px;
     }
 
-    .bigger-icon{
+    .bigger-icon {
         font-size: 1.5rem;
     }
+
     .hidden {
         visibility: hidden;
         opacity: 0;
     }
-    
+
     #transparent {
         font-size: 0px;
         color: transparent;
     }
-
 }
 
 @media (max-width: 480px) {
     #navigation {
-        padding-top: 3%
+        width: 90%;
+        border-bottom: none;
+        padding-bottom: 3%;
+        margin-left: 2%;
+        padding: 5% 4%;
+        padding-left: 6px;
+        margin-bottom: 12px;
+        background-color: var(--degree);
+        border-radius: 12px;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
     }
 
     .nav-item {
         font-size: 22px;
+        margin-right: -12px;
     }
-    
-    #profile {
-        margin-top: -8%;
+
+    .nav-item a {
+        font-size: 1.7rem;
+        padding-right: 12px;
+        color: rgb(31, 76, 91);
+        cursor: pointer;
     }
-    
+
+    .nav-item a:hover {
+        color: var(--bg);
+    }
+
     .grid-container {
-        top:45%;
+        top: 50%;
+        left: 0;
+        width: 89%;
+        position: relative;
         grid-template-areas:
-        'social-contact'
-        'about-me'
-        'tech-stack'
-        'work-experience'
-        'education'
-        'language'
-        'project';
+            'navigation'
+            'social-contact'
+            'about-me'
+            'education'
+            'work-experience'
+            'tech-stack'
+            'language'
+            'references'
+            'announcement';
     }
-    
+
     .profile-pic {
         width: 125px;
         height: 125px;
     }
-    
+
     .profile-name {
         letter-spacing: 5px;
         font-size: 1.5rem;
         font-weight: 600;
         margin-top: -1%;
     }
-    
+
     .profile-info {
         font-size: 1.25rem;
         letter-spacing: 5px;
     }
 
     #social-contact {
-        height: 50px; 
-        padding: 1% 0;
+        border-top: 1px dashed transparent;
+        border-bottom: 1px dashed transparent;
+        background-color: #19202e;
+        width: 90%;
+        height: auto;
+        padding: 5% 6%;
+        margin-bottom: 12px;
     }
-    
+
     #social-contact .items {
-        font-size: 12px;
-        margin-top: 0.7%;
-    }
-    
-    #social-contact .item {
-        padding: 6px 0 ;
+        margin-top: 0.7% 0;
     }
 
     #social-contact .item a {
-        font-size: 12px;
-        padding: 0 24px;
+        padding: -12%;
     }
 
-    .bigger-icon{
-        font-size: 2rem;
+    .bigger-icon {
+        font-size: 1rem;
     }
+
     .hidden {
         visibility: hidden;
         opacity: 0;
@@ -148,6 +188,97 @@
         font-size: 0px;
         color: transparent;
     }
+
+    #education {
+        width: 96%;
+        border: 1px dashed var(--white)
+    }
+
+    #education h3 {
+        display: block;
+        padding: 0 20%;
+        margin: 4% auto;
+        text-decoration: underline;
+        font-size: 1.7rem;
+    }
+
+    .fa-book {
+        display: none;
+    }
+
+    #work-experience {
+        padding: 0 3%;
+        width: 95%;
+        border: 1px dashed white;
+    }
+
+    #work-experience h3 {
+        display: block;
+        padding: 0 16%;
+        margin: 4% auto;
+        text-decoration: underline;
+        font-size: 1.4rem;
+        text-align: center;
+    }
+
+    .fa-briefcase {
+        display: none;
+    }
+
+    #work-experience h5 {
+        font-size: 1.2rem;
+    }
+
+    .wing {
+        left: 75.5%;
+    }
+
+    .truemoney {
+        width: 10px;
+        left: 75.5%;
+    }
+
+    #tech-stack {
+        width: 95%;
+        border: 1px dashed var(--white)
+    }
+
+    #tech-stack h3 {
+        display: block;
+        padding: 0 20%;
+        margin: 4% auto;
+        text-decoration: underline;
+        font-size: 1.6rem;
+        text-align: center;
+    }
+
+    .fa-microchip {
+        display: none;
+    }
+
+    #language {
+        padding: 0 3%;
+        width: 95%;
+        border: 1px dashed var(--white);
+    }
+
+    #language h3 {
+        display: block;
+        padding: 0 24%;
+        margin: 4% auto;
+        text-decoration: underline;
+        font-size: 1.4rem;
+        text-align: center;
+    }
+
+    .fa-language {
+        display: none;
+    }
+
+    .referer {
+        margin-top: -2%;
+    }
+
 }
 
 @media (max-width: 374px) {
