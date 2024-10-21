@@ -8,9 +8,11 @@ const visitorInfo = {
 
 function getSource() {
   const source = '';
-  if(document.referrer.includes("facebook.com")) {
+  const baseURI = document.baseURI;
+
+  if(baseURI.includes("facebook.com")) {
     source = 'Facebook'
-  } else if(document.referrer.includes("linkedin.com")) {
+  } else if(baseURI.includes("linkedin.com")) {
        source = 'Linkedin'
   } else {
     source = 'Unknown'
