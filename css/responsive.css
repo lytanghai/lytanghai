@@ -14,71 +14,84 @@
     --font-primary: "Inter", sans-serif;
 }
 
-@media (max-width: 768px) {
-
-    /* 481 -> 768 */
-    #navigation {
-        padding-top: 3%
-    }
-
-    .nav-item {
-        font-size: 22px;
-    }
+@media only screen and (min-width: 481px) and (max-width: 992px) {
 
     #profile {
-        margin-top: -8%;
+        margin-top: -10%;
     }
+
 
     .profile-pic {
-        width: 125px;
-        height: 125px;
+        width: 160px;
+        height: 160px;
     }
-
+    
     .profile-name {
-        letter-spacing: 5px;
-        font-size: 1.5rem;
-        font-weight: 600;
-        font-style: normal;
-        margin-top: -1%;
+        font-size: 2rem;
     }
-
+    
     .profile-info {
-        font-size: 1.25rem;
-        letter-spacing: 5px;
+        font-size: 1.3rem;
     }
 
     .grid-container {
-        top: 45%;
+        margin-top: 2%;
+        left: 0;
+        width: 92%;
+        margin: 0 auto;
+        position: relative;
         grid-template-areas:
+            'navigation'
             'social-contact'
             'about-me'
-            'tech-stack'
-            'work-experience'
             'education'
+            'work-experience'
+            'tech-stack'
             'language'
-            'project';
+            'references'
+            'announcement';
+    }
+
+    #navigation {
+        width: auto;
+        border-bottom: none;
+        padding-bottom: 3%;
+        margin-left: .8%;
+        padding: 2% 4%;
+        padding-left: 1.2rem;
+        margin-bottom: .6rem;
+        background-color: var(--degree);
+        border-radius: 12px;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nav-item a {
+        font-size: 2rem;
+        padding-right: 1rem;
+        color: var(--white);
+        cursor: pointer;
     }
 
     #social-contact {
-        height: 10px;
-        padding: 5% 0;
+        border-top: 1px dashed transparent;
+        border-bottom: 1px dashed transparent;
+        background-color: #19202e;
+        width: 100%;
+        height: 8%;
+        padding-bottom: 6%;
     }
 
     #social-contact .items {
-        margin: -16px auto;
-    }
-
-    #social-contact .item {
-        padding: 6px 0;
+        margin-top: 0.7% 8%;
+        padding-left: 10%;
     }
 
     #social-contact .item a {
-        padding: 0 24px;
-    }
-
-    .bigger-icon {
         font-size: 1.5rem;
-    }
+        padding: -12%;
+    } 
 
     .hidden {
         visibility: hidden;
@@ -89,6 +102,150 @@
         font-size: 0px;
         color: transparent;
     }
+
+    #about-me{
+        display: block;
+        text-align: left;
+        padding: 0;
+        width: 99%;
+    }
+    
+    #about-me h3 {
+        font-size: 1.4rem;
+    }
+    
+    #about-me p {
+        text-indent: 8px;
+        font-size: 1rem;
+        padding-left: 36px;
+    }
+
+    #education {
+        width: 95%;
+        color: var(--white);
+        border-top: 1px solid var(--white);
+        border-left: none;
+
+    }
+    
+    #education h3 {
+        text-align: left; 
+        font-size: 1.6rem;  
+    } 
+    
+    #education .school {
+        padding-right: 8%;
+        font-size: 1.3rem;
+    }
+
+    #education .school img {
+        width: 1rem;
+    }
+    
+    #education .degree {
+        font-size: 1rem;
+        padding: 0 6px;
+        border-radius: 6px;
+    }
+
+    #work-experience {
+        border: none;
+    }
+    
+    #work-experience h3 {
+        text-align: left; 
+        font-size: 1.6rem;  
+    }
+    
+    #work-experience h5 {
+        font-size: 1.5rem;
+    }
+    
+    #work-experience .date {
+        padding: 1% 0.8rem;
+    }
+    
+    #work-experience ul {
+        margin-left: 2rem;
+        margin-top: -5%;
+    }
+    
+    #work-experience ul li {
+        font-size: 1.1rem;
+    }
+    
+    .wing {
+        width: auto;
+        text-align: right;
+        padding: 3px;
+        padding-right: 5%;
+        font-size: 12px;    
+        right:0;
+    }
+    
+    .truemoney {
+        width: auto;
+        text-align: right;
+        padding: 3px;
+        padding-right: 5%;
+        font-size: 12px;    
+        right:0;
+    }
+
+    #tech-stack {
+        width: auto;
+        border-top: 1px solid var(--white);
+    }
+
+    #tech-stack h3 {
+        text-align: left; 
+        font-size: 1.6rem; 
+    }
+
+    #language {
+        /* border: none; */
+        border-right: none;
+    }
+    
+    #language h3 {
+        text-align: left; 
+        font-size: 1.6rem; 
+    }
+    
+    .language_title {
+        font-size: 1.3rem;
+        padding-left: 36px;
+    }
+    
+    .column_lang {
+        width: 80px;
+        height: 25px;
+    }
+    
+    .column_lang_bright {
+        width: 80px;
+        height: 25px;
+    }
+    
+    .column_lang_bright_half {
+        width: 80px;
+        height: 25px;
+    }
+
+    #references h3 {
+        text-align: left; 
+        font-size: 1.6rem; 
+        padding: 0 auto;
+    }
+    
+    .referer {
+        font-size: 1.2rem;
+    }
+    
+    .reference_prop {
+        font-size: .9rem;
+    }   
+    
 }
 
 @media (max-width: 480px) {
@@ -126,7 +283,7 @@
     .grid-container {
         top: 50%;
         left: 0;
-        width: 89%;
+        width: 90%;
         position: relative;
         grid-template-areas:
             'navigation'
@@ -155,6 +312,13 @@
     .profile-info {
         font-size: 1.25rem;
         letter-spacing: 5px;
+    }
+
+    #about-me {
+        padding: 0;
+        width: 99%;
+        border-top: 1px solid var(--white);
+        border-bottom: 1px solid var(--white);
     }
 
     #social-contact {
@@ -191,7 +355,7 @@
 
     #education {
         width: 96%;
-        border: 1px dashed var(--white)
+        border-left: none;
     }
 
     #education h3 {
@@ -209,7 +373,7 @@
     #work-experience {
         padding: 0 3%;
         width: 95%;
-        border: 1px dashed white;
+        border: none;
     }
 
     #work-experience h3 {
@@ -217,7 +381,7 @@
         padding: 0 16%;
         margin: 4% auto;
         text-decoration: underline;
-        font-size: 1.4rem;
+        font-size: 1.2rem;
         text-align: center;
     }
 
@@ -227,6 +391,10 @@
 
     #work-experience h5 {
         font-size: 1.2rem;
+    }
+
+    #work-experience .date {
+        padding: 1% 0.8rem;
     }
 
     .wing {
@@ -240,7 +408,8 @@
 
     #tech-stack {
         width: 95%;
-        border: 1px dashed var(--white)
+        border-top: 1px solid var(--white);
+        border-bottom: 1px solid var(--white);
     }
 
     #tech-stack h3 {
@@ -259,7 +428,8 @@
     #language {
         padding: 0 3%;
         width: 95%;
-        border: 1px dashed var(--white);
+        border-bottom: 1px solid var(--white);
+        border-right: none;
     }
 
     #language h3 {
@@ -278,7 +448,6 @@
     .referer {
         margin-top: -2%;
     }
-
 }
 
 @media (max-width: 374px) {
