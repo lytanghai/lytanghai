@@ -2,33 +2,31 @@ const visitorInfo = {
   operatingSystem: getOperatingSystem(),
   browser: detectBrowser(),
   screenWidth: window.screen.width,
-  screenHeight: window.screen.height,
-  source: getSource(),
-  referer: getReferer()
+  screenHeight: window.screen.height
 };
 
-function getReferer() {
-  const referers = 'E';
-  if (document.referrer) {
-    referers = document.referrer
-  }
-  return referers;
-}
+// function getReferer() {
+//   const referers = 'E';
+//   if (document.referrer) {
+//     referers = document.referrer
+//   }
+//   return referers;
+// }
 
-function getSource() {
-  const source = '';
-  const baseURI = document.baseURI;
+// function getSource() {
+//   const source = '';
+//   const baseURI = document.baseURI;
 
-  if (baseURI.includes("facebook.com")) {
-    source = 'Facebook'
-  } else if (baseURI.includes("linkedin.com")) {
-    source = 'Linkedin'
-  } else {
-    source = 'Unknown'
-  }
+//   if (baseURI.includes("facebook.com")) {
+//     source = 'Facebook'
+//   } else if (baseURI.includes("linkedin.com")) {
+//     source = 'Linkedin'
+//   } else {
+//     source = 'Unknown'
+//   }
 
-  return source;
-}
+//   return source;
+// }
 
 function getOperatingSystem() {
   const platform = navigator.platform;
