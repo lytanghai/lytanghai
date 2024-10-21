@@ -3,20 +3,31 @@ const visitorInfo = {
   browser: detectBrowser(),
   screenWidth: window.screen.width,
   screenHeight: window.screen.height,
-  source: getSource()
+  source: getSource(),
+  referer: getReferer()
 };
+
+function getReferer() {
+  const referers = 'E';
+  if (document.referrer) {
+    referers = document.referrer
+  }
+  return referers;
+}
 
 function getSource() {
   const source = '';
   const baseURI = document.baseURI;
 
-  if(baseURI.includes("facebook.com")) {
+  if (baseURI.includes("facebook.com")) {
     source = 'Facebook'
-  } else if(baseURI.includes("linkedin.com")) {
-       source = 'Linkedin'
+  } else if (baseURI.includes("linkedin.com")) {
+    source = 'Linkedin'
   } else {
     source = 'Unknown'
   }
+
+  return source;
 }
 
 function getOperatingSystem() {
@@ -24,42 +35,42 @@ function getOperatingSystem() {
   const userAgent = navigator.userAgent;
 
   if (platform.toLowerCase().includes('win')) {
-      return 'Windows';
+    return 'Windows';
   } else if (platform.toLowerCase().includes('mac')) {
-      return 'Mac OS';
+    return 'Mac OS';
   } else if (platform.toLowerCase().includes('linux')) {
-      return 'Linux';
+    return 'Linux';
   } else if (userAgent.includes('Android')) {
-      return 'Android';
+    return 'Android';
   } else if (userAgent.includes('iOS')) {
-      return 'iOS';
+    return 'iOS';
   } else if (userAgent.includes('X11')) {
-      return 'Unix';
+    return 'Unix';
   } else if (userAgent.includes('iPhone')) {
-      return 'iOS';
+    return 'iOS';
   } else if (userAgent.includes('iPad')) {
-      return 'iOS';
+    return 'iOS';
   } else if (userAgent.includes('BlackBerry')) {
-      return 'BlackBerry';
+    return 'BlackBerry';
   } else {
-      return 'Unknown';
+    return 'Unknown';
   }
 }
 
 function detectBrowser() {
   var userAgent = navigator.userAgent;
   if (userAgent.indexOf("Edg") > -1) {
-      return "Microsoft Edge";
+    return "Microsoft Edge";
   } else if (userAgent.indexOf("Chrome") > -1) {
-      return "Chrome";
+    return "Chrome";
   } else if (userAgent.indexOf("Firefox") > -1) {
-      return "Firefox";
+    return "Firefox";
   } else if (userAgent.indexOf("Safari") > -1) {
-      return "Safari";
+    return "Safari";
   } else if (userAgent.indexOf("Opera") > -1) {
-      return "Opera";
+    return "Opera";
   } else if (userAgent.indexOf("Trident") > -1 || userAgent.indexOf("MSIE") > -1) {
-      return "Internet Explorer";
+    return "Internet Explorer";
   }
 
   return "Unknown";
@@ -67,19 +78,19 @@ function detectBrowser() {
 
 function formatTelegramMessage(jsonObject) {
   let formattedMessage = '';
-  
+
   for (const key in jsonObject) {
-      if (typeof jsonObject[key] === 'object') {
-          formattedMessage += `${key}: \n`;
-          const innerKeys = Object.keys(jsonObject[key]);
-          innerKeys.forEach(innerKey => {
-              formattedMessage += `   ${innerKey}: ${jsonObject[key][innerKey]}\n`;
-          });
-      } else {
-          formattedMessage += `${key}: ${jsonObject[key]}\n`;
-      }
+    if (typeof jsonObject[key] === 'object') {
+      formattedMessage += `${key}: \n`;
+      const innerKeys = Object.keys(jsonObject[key]);
+      innerKeys.forEach(innerKey => {
+        formattedMessage += `   ${innerKey}: ${jsonObject[key][innerKey]}\n`;
+      });
+    } else {
+      formattedMessage += `${key}: ${jsonObject[key]}\n`;
+    }
   }
-  
+
   return formattedMessage;
 }
 
