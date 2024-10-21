@@ -2,8 +2,20 @@ const visitorInfo = {
   operatingSystem: getOperatingSystem(),
   browser: detectBrowser(),
   screenWidth: window.screen.width,
-  screenHeight: window.screen.height
+  screenHeight: window.screen.height,
+  source: getSource()
 };
+
+function getSource() {
+  const source = '';
+  if(document.referrer.includes("facebook.com")) {
+    source = 'Facebook'
+  } else if(document.referrer.includes("linkedin.com")) {
+       source = 'Linkedin'
+  } else {
+    source = 'Unknown'
+  }
+}
 
 function getOperatingSystem() {
   const platform = navigator.platform;
