@@ -76,7 +76,6 @@ function sendTelegramMessage() {
 
 
   const determineSource = () => {
-    source = document.referrer.toString();
     const referrer = document.referrer.toString();
     if (referrer.includes('linkedin')) {
         source = 'Linkedin'
@@ -86,7 +85,7 @@ function sendTelegramMessage() {
         source = 'Instagram'
     } else if(referrer.includes('threads')) {
         source = 'Threads'
-    } else if(referrer.includes('twitter') || referrer.includes('x.com') || referrer.includes('t.com')) {
+    } else if(referrer.includes('twitter') || referrer.includes('x.com') || referrer.includes('t.co')) {
         source = 'Twitter'
     }
   };
