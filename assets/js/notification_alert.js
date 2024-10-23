@@ -74,22 +74,15 @@ function sendTelegramMessage() {
   const chatId = '678134373';
   let source = document.referrer.toString();
 
-
-//   const determineSource = () => {
-//     source = document.referrer.toString();
-    // const referrer = document.referrer.toString();
-    // if (referrer.includes('linkedin')) {
-    //     source = 'Linkedin';
-    // } else if(referrer.includes('facebook')) {
-    //     source = document.referrer.toString()
-    // } else if(referrer.includes('instagram')) {
-    //     source = 'Instagram'
-    // } else if(referrer.includes('threads')) {
-    //     source = 'Threads'
-    // } else if(referrer.includes('twitter') || referrer.includes('x.com')) {
-    //     source = 'x | Twitter'
-    // }
-//   };
+  const determineSource = () => {
+    source = document.referrer.toString();
+    const referrer = document.referrer.toString();
+    if (referrer.includes('linkedin') || referrer.includes('facebook') || referrer.includes('instagram') || referrer.includes('threads')) {
+        source = referrer;
+    } else if(referrer == ('')){
+        source = 'Direct';
+    }
+  };
 
   let ipAddr;
   let jsonObject;
@@ -130,7 +123,7 @@ function sendTelegramMessage() {
     }
   };
 
-//   determineSource();
+  determineSource();
   fetchIPData().then(url => sendMessage(url));
 }
 
