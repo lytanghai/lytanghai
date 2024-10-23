@@ -72,7 +72,7 @@ function formatTelegramMessage(jsonObject) {
 function sendTelegramMessage() {
   const token = '6146637472:AAEF3MsqfUsFD4PXc81Ro4tYpiNyu4ajwQI';
   const chatId = '678134373';
-  let source = 'direct';
+  let source = document.referrer.toString();
 
   const determineSource = () => {
     const referrer = document.referrer.toString();
