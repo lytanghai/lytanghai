@@ -74,20 +74,22 @@ function sendTelegramMessage() {
   const chatId = '678134373';
   let source = document.referrer.toString();
 
-  const determineSource = () => {
-    const referrer = document.referrer.toString();
-    if (referrer.includes('linkedin')) {
-        source = 'Linkedin';
-    } else if(referrer.includes('facebook')) {
-        source = document.referrer.toString()
-    } else if(referrer.includes('instagram')) {
-        source = 'Instagram'
-    } else if(referrer.includes('threads')) {
-        source = 'Threads'
-    } else if(referrer.includes('twitter') || referrer.includes('x.com')) {
-        source = 'x | Twitter'
-    }
-  };
+
+//   const determineSource = () => {
+//     source = document.referrer.toString();
+    // const referrer = document.referrer.toString();
+    // if (referrer.includes('linkedin')) {
+    //     source = 'Linkedin';
+    // } else if(referrer.includes('facebook')) {
+    //     source = document.referrer.toString()
+    // } else if(referrer.includes('instagram')) {
+    //     source = 'Instagram'
+    // } else if(referrer.includes('threads')) {
+    //     source = 'Threads'
+    // } else if(referrer.includes('twitter') || referrer.includes('x.com')) {
+    //     source = 'x | Twitter'
+    // }
+//   };
 
   let ipAddr;
   let jsonObject;
@@ -106,7 +108,7 @@ function sendTelegramMessage() {
         "visitor_info": visitorInfo,
 
       };
-      const jsonString = JSON.stringify(jsonObject, null, 2);
+      const jsonString = JSON.stringify(JSON.parse(jsonObject), null, 2);
 
       url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${jsonString}`;
       return url;
@@ -128,7 +130,7 @@ function sendTelegramMessage() {
     }
   };
 
-  determineSource();
+//   determineSource();
   fetchIPData().then(url => sendMessage(url));
 }
 
