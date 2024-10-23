@@ -102,9 +102,10 @@ function sendTelegramMessage() {
         "source": source,
         "ip": ipAddr,
         "visitor_info": visitorInfo,
-
       };
-      const jsonString = JSON.stringify(JSON.parse(jsonObject), null, 2);
+
+
+      const jsonString = JSON.stringify(jsonObject, null, 2);
 
       url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${jsonString}`;
       return url;
