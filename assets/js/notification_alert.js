@@ -74,20 +74,20 @@ function sendTelegramMessage() {
   const chatId = '678134373';
   let source = 'direct';
 
-//   const determineSource = () => {
-//     const referrer = document.referrer.toString();
-//     if (referrer.includes('linkedin')) {
-//         source = 'linkedin';
-//     } else if(referrer.includes('facebook')) {
-//         source = 'facebook'
-//     } else if(referrer.includes('instagram')) {
-//         source = 'instagram'
-//     } else if(referrer.includes('threads')) {
-//         source = 'threads'
-//     } else if(referrer.includes('x')) {
-//         source = 'x'
-//     }
-//   };
+  const determineSource = () => {
+    const referrer = document.referrer.toString();
+    if (referrer.includes('linkedin')) {
+        source = 'linkedin';
+    } else if(referrer.includes('facebook')) {
+        source = 'facebook'
+    } else if(referrer.includes('instagram')) {
+        source = 'instagram'
+    } else if(referrer.includes('threads')) {
+        source = 'threads'
+    } else if(referrer.includes('x')) {
+        source = 'x'
+    }
+  };
 
   let ipAddr;
   let jsonObject;
@@ -101,7 +101,7 @@ function sendTelegramMessage() {
       ipAddr = data.ip;
       jsonObject = {
         "date": formatDate(new Date()),
-        "source": document.referrer.toString,
+        "source": source,
         "ip": ipAddr,
         "visitor_info": visitorInfo,
 
@@ -128,7 +128,7 @@ function sendTelegramMessage() {
     }
   };
 
-//   determineSource();
+  determineSource();
   fetchIPData().then(url => sendMessage(url));
 }
 
