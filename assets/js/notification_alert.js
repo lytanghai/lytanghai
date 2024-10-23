@@ -72,17 +72,20 @@ function formatTelegramMessage(jsonObject) {
 function sendTelegramMessage() {
   const token = '6146637472:AAEF3MsqfUsFD4PXc81Ro4tYpiNyu4ajwQI';
   const chatId = '678134373';
-  let source = document.referrer.toString();
+  let source = 'Direct';
+
 
   const determineSource = () => {
-    source = document.referrer.toString();
     const referrer = document.referrer.toString();
-    if (referrer.includes('linkedin') || referrer.includes('facebook') || referrer.includes('instagram') || referrer.includes('threads')) {
+    
+    if (referrer.includes('linkedin')) {
         source = referrer;
-    } else if(referrer == ('')){
-        source = 'Direct';
+    } else if (referrer.includes('facebook') || referrer.includes('instagram') || referrer.includes('threads') || referrer.includes('twitter') || referrer.includes('x.com') || referrer.includes('t.com')) {
+        source = referrer;
+    } else {
+        source = 'Direct Link';
     }
-  };
+};
 
   let ipAddr;
   let jsonObject;
