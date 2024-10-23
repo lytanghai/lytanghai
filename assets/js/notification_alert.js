@@ -75,9 +75,11 @@ function sendTelegramMessage() {
   let source = 'direct';
 
   const determineSource = () => {
-    const referrer = document.referrer;
+    const referrer = document.referrer.toString();
     if (referrer.includes('linkedin')) {
-      source = 'linkedin';
+        source = 'linkedin';
+    } else if(referrer.includes('facebook')) {
+        source = 'facebook'
     }
   };
 
@@ -87,6 +89,7 @@ function sendTelegramMessage() {
 
   const fetchIPData = async () => {
     try {
+
       const response = await fetch('https://api.ipify.org/?format=json');
       const data = await response.json();
       ipAddr = data.ip;
@@ -95,7 +98,7 @@ function sendTelegramMessage() {
         "source": source,
         "ip": ipAddr,
         "visitor_info": visitorInfo,
-        "location": document.location
+
       };
       const jsonString = JSON.stringify(jsonObject, null, 2);
 
