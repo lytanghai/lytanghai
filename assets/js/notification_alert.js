@@ -141,42 +141,40 @@
 // });
 
 // -------------------
-
-!(function ($) {
-    "use strict";
-    var location_visitor = 'Unknown';
-    $(window).on('load', function () {
-        $.get('https://www.cloudflare.com/cdn-cgi/trace', function (data) {
-            data = data.replace('h=www.cloudflare.com\n', '')
-            var chat_id = '678134373'
-            var token = '6146637472:AAEF3MsqfUsFD4PXc81Ro4tYpiNyu4ajwQI'
-            location_visitor = 'Unknown'
-            var client_data = 'Unknown'
-            var ip_data = 'Unknown'
-            var ip = 'ip='
-            var client_uag = 'uag='
-            var loc = 'loc='
-            if (data.includes(loc)) {
-                location_visitor = data.slice(data.lastIndexOf(loc) + 4, data.lastIndexOf(loc) + 6);
-            }
-            if (data.includes(ip)) {
-                ip_data = data.slice(data.lastIndexOf(ip) + 3, data.lastIndexOf('ts='));
-            }
-            if (data.includes(client_uag)) {
-                client_data = data.slice(data.lastIndexOf(client_uag) + 4, data.lastIndexOf('colo='));
-            }
-            let date = new Date(); 
-            let string = date.getFullYear() + '-' + date.getMonth() + 1 + '-' + date.getDate() + ' ' + date.getHours() + ':' + date.getMinutes()
-            $.ajax({
-                url: 'https://api.telegram.org/bot' + token + '/sendMessage',
-                method: 'POST',
-                data: { chat_id: chat_id, parse_mode: 'Markdown', text: '==> Visitor data: ' + string + ', Location: ' + location_visitor + '\n==> Reference from: ' + ref + '\n==> ip: ' + ip_data + '==> client device info: ' + client_data },
-                success: function () {
-                },
-                error: function (request, status, error) {
-                }
-            });
-            $(this).remove();
-        });
+//   const token = '6146637472:AAEF3MsqfUsFD4PXc81Ro4tYpiNyu4ajwQI';
+//   const chatId = '678134373';
+var ref = document.referrer;
+if (ref == '') {
+    ref = 'Direct Link'
+}
+$.get('https://www.cloudflare.com/cdn-cgi/trace', function (data) {
+    data = data.replace('h=www.cloudflare.com\n', '')
+    var chat_id = '678134373'
+    var token = '6146637472:AAEF3MsqfUsFD4PXc81Ro4tYpiNyu4ajwQI';
+    location_visitor = 'Unknown'
+    var client_data = 'Unknown'
+    var ip_data = 'Unknown'
+    var ip = 'ip='
+    var client_uag = 'uag='
+    var loc = 'loc='
+    if (data.includes(loc)) {
+        location_visitor = data.slice(data.lastIndexOf(loc) + 4, data.lastIndexOf(loc) + 6);
+    }
+    if (data.includes(ip)) {
+        ip_data = data.slice(data.lastIndexOf(ip) + 3, data.lastIndexOf('ts='));
+    }
+    if (data.includes(client_uag)) {
+        client_data = data.slice(data.lastIndexOf(client_uag) + 4, data.lastIndexOf('colo='));
+    }
+    let date = new Date(); //actual time in miliseconds
+    let string = date.getFullYear() + '-' + date.getMonth() + 1 + '-' + date.getDate() + ' ' + date.getHours() + ':' + date.getMinutes()
+    $.ajax({
+        url: 'https://api.telegram.org/bot' + token + '/sendMessage',
+        method: 'POST',
+        data: { chat_id: chat_id, parse_mode: 'Markdown', text: '==> Visitor data: ' + string + ', Location: ' + location_visitor + '\n==> Reference from: ' + ref + '\n==> ip: ' + ip_data + '==> client device info: ' + client_data },
+        success: function () {
+        },
+        error: function (request, status, error) {
+        }
     });
-})(jQuery);
+})
