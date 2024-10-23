@@ -77,15 +77,15 @@ function sendTelegramMessage() {
   const determineSource = () => {
     const referrer = document.referrer.toString();
     if (referrer.includes('linkedin')) {
-        source = 'linkedin';
+        source = 'Linkedin';
     } else if(referrer.includes('facebook')) {
-        source = 'facebook'
+        source = 'Facebook'
     } else if(referrer.includes('instagram')) {
-        source = 'instagram'
+        source = 'Instagram'
     } else if(referrer.includes('threads')) {
-        source = 'threads'
-    } else if(referrer.includes('x')) {
-        source = 'x'
+        source = 'Threads'
+    } else if(referrer.includes('twitter') || referrer.includes('x.com')) {
+        source = 'x | Twitter'
     }
   };
 
