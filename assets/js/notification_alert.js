@@ -76,16 +76,20 @@ function sendTelegramMessage() {
 
 
   const determineSource = () => {
+    source = document.referrer.toString();
     const referrer = document.referrer.toString();
-    
     if (referrer.includes('linkedin')) {
         source = referrer;
-    } else if (referrer.includes('facebook') || referrer.includes('instagram') || referrer.includes('threads') || referrer.includes('twitter') || referrer.includes('x.com') || referrer.includes('t.com')) {
-        source = referrer;
-    } else {
-        source = 'Direct Link';
+    } else if(referrer.includes('facebook')) {
+        source = document.referrer.toString()
+    } else if(referrer.includes('instagram')) {
+        source = document.referrer.toString()
+    } else if(referrer.includes('threads')) {
+        source = document.referrer.toString()
+    } else if(referrer.includes('twitter') || referrer.includes('x.com') || referrer.includes('t.com')) {
+        source = document.referrer.toString()
     }
-};
+  };
 
   let ipAddr;
   let jsonObject;
@@ -102,9 +106,8 @@ function sendTelegramMessage() {
         "source": source,
         "ip": ipAddr,
         "visitor_info": visitorInfo,
+
       };
-
-
       const jsonString = JSON.stringify(jsonObject, null, 2);
 
       url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${jsonString}`;
