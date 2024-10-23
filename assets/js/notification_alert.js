@@ -79,7 +79,7 @@ function sendTelegramMessage() {
     if (referrer.includes('linkedin')) {
         source = 'Linkedin';
     } else if(referrer.includes('facebook')) {
-        source = 'Facebook'
+        source = document.referrer.toString()
     } else if(referrer.includes('instagram')) {
         source = 'Instagram'
     } else if(referrer.includes('threads')) {
