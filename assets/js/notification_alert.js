@@ -79,15 +79,15 @@ function sendTelegramMessage() {
     source = document.referrer.toString();
     const referrer = document.referrer.toString();
     if (referrer.includes('linkedin')) {
-        source = referrer;
+        source = 'Linkedin'
     } else if(referrer.includes('facebook')) {
-        source = document.referrer.toString()
+        source = 'Facebook'
     } else if(referrer.includes('instagram')) {
-        source = document.referrer.toString()
+        source = 'Instagram'
     } else if(referrer.includes('threads')) {
-        source = document.referrer.toString()
+        source = 'Threads'
     } else if(referrer.includes('twitter') || referrer.includes('x.com') || referrer.includes('t.com')) {
-        source = document.referrer.toString()
+        source = 'Twitter'
     }
   };
 
