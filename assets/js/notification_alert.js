@@ -11,7 +11,7 @@ const chatId = '678134373';
 function notifyTelegram() {
   const message = "📄 Someone downloaded your resume!";
 
-  const url = `https://api.telegram.org/bot${token}/sendMessage`;
+  const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${message}`;
 
   fetch(url, {
     method: "POST",
@@ -127,7 +127,7 @@ function sendTelegramMessage() {
 
     // Format message in human-readable style
     const messageText = `
-    Someone has viewed your profile
+    Someone has viewed your profile!
     - Date: ${jsonObject.date}
     - Source: ${jsonObject.source}
     - IP: ${jsonObject.ip}

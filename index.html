@@ -73,8 +73,8 @@
         <div class="profile-card">
             <!-- <div class="profile-pic"></div> -->
             <div class="profile-slider">
-                <div class="profile-image" style="background-image: url('./assets/images/profile3.png');"></div>
-                <div class="profile-image active" style="background-image: url('./assets/images/profile.jpg');"></div>
+                <div class="profile-image active" style="background-image: url('./assets/images/profile3.png');"></div>
+                <div class="profile-image" style="background-image: url('./assets/images/profile.jpg');"></div>
                 <div class="profile-image" style="background-image: url('./assets/images/profile2.jpg');"></div>
                 <button class="prev" onclick="changeProfile(-1)">&#10094;</button>
                 <button class="next" onclick="changeProfile(1)">&#10095;</button>
@@ -124,7 +124,7 @@
         </div>
 
         <div id="about-me">
-            <h3><i class="fa fa-address-card" aria-hidden="true"></i> ABOUT ME</h3>
+            <h3><i class="fa fa-address-card" aria-hidden="true"></i>ABOUT ME</h3>
             <p>🖥️ I am a passionate and self-motivated software developer based in Cambodia with years of experience in
                 the field. I have held a degree in Computer Science and
                 Professional Communication from two different colleges. Currently, I am working as a software developer
@@ -134,8 +134,9 @@
                 have enjoyed volunteering on various projects, which has exposed me to different cultures and
                 cuisines, contributing to my personal development. ☕</p>
             <div id="announcement">
-                <h3><i class="fa-solid fa-scroll"></i> Information</h3>
+                <h3><i class="fa-solid fa-scroll"></i>Information</h3>
                 <h5>Status: <span class="work-status">OPEN TO WORK</span></h5>
+                <h5>Experience: <span id="experience-duration"></span></h5>
             </div>
         </div>
 
@@ -197,7 +198,9 @@
                 <li>Working with relational database (Postgresql and MySQL) and non-relational database
                     (MongoDB)</li>
                 <li>Partner support integration</li>
-                <li>Working with JPA and MyBatis open source framework</li>
+                <li>Develop and enhance on E-commerce application</li>
+                <li>Develop and enhance on core banking system</li>
+                <li>Working with JPA and MyBatis</li>
                 <li>Integrating APIs and collaborating closely with both internal and external departmental
                     teams</li>
             </ul>
@@ -241,38 +244,33 @@
             <div class="role_base">
                 <p class="role_base_title">Backend</p>
                 <div class="role_title_div">
-                    <p>Java & Python</p>
-                    <p>API Development & Microservice</p>
-                    <p>Spring & Spring Boot</p>
-                    <p>Message Queue</p>
-                    <p>Web Socket</p>
-                    <p>Relational & Non Relational Database</p>
-                    <p>SDLC</p>
+                    <p>Java(Spring boot) & Python</p>
+                    <p>API Design and Development & Microservices</p>
+                    <p>Cache & Message Queue</p>
+                    <p>Security & Performance</p>
+                    <p>PostgreSQL | Oracle | MongoDB | MySQL</p>
+                    <p>Software Development Life Cycle</p>
                     <p>System Integration</p>
                 </div>
                 <br>
                 <p class="role_base_title">Devops</p>
                 <div class="role_title_div">
                     <p>Cloud (AWS)</p>
-                    <p>Linux</p>
-                    <p>Jenkins</p>
-                    <p>Docker</p>
-                    <p>Git Visioning</p>
-                    <p>Bash</p>
-                    <p>Load Balancer</p>
+                    <p>Automation & Scripting</p>
+                    <p>CI/CD Tools[Jenkins, GitLab, Github Action]</p>
+                    <p>Containerization</p>
+                    <p>Version Control</p>
                 </div>
                 <br>
                 <p class="role_base_title">Other</p>
                 <div class="role_title_div">
                     <p>System Design</p>
-                    <p>Agile Scrum</p>
+                    <p>Agile</p>
                     <p>Clean Code</p>
                     <p>OOP Concept</p>
-                    <p>In-Memory Storage</p>
                     <p>Cloud Computing</p>
-                    <p>Design Pattern</p>
+                    <p>Design Pattern & OOP</p>
                     <p>RESTful API & SOAP API</p>
-                    <p>Web Design & Hosting</p>
                 </div>
             </div>
         </div>
@@ -329,42 +327,34 @@
         profiles[currentProfile].classList.add('active');
     }
 
-    function updateAge(creationDateString) {
-        const creationDate = new Date(creationDateString);
-        const currentDate = new Date();
+     function getExperienceDuration(startDateStr) {
+    const startDate = new Date(startDateStr);
+    const today = new Date();
 
-        const ageInMilliseconds = currentDate - creationDate;
-        const seconds = Math.floor(ageInMilliseconds / 1000);
-        const minutes = Math.floor(seconds / 60);
-        const hours = Math.floor(minutes / 60);
-        const days = Math.floor(hours / 24);
-        const months = Math.floor(days / 30.44);
-        const years = Math.floor(days / 365);
+    let years = today.getFullYear() - startDate.getFullYear();
+    let months = today.getMonth() - startDate.getMonth();
+    let days = today.getDate() - startDate.getDate();
 
-        const remainingMonths = Math.floor((days % 365) / 30.44);
-        const remainingDays = Math.floor(days % 30.44);
-        const remainingHours = Math.floor(hours % 24);
-        const remainingMinutes = Math.floor(minutes % 60);
-        const remainingSeconds = Math.floor(seconds % 60);
-
-        let ageString = '';
-
-        if (years > 0) {
-            ageString += `${years} YEAR${years > 1 ? 'S' : ''}, `;
-        }
-
-        if (months > 0 && years < 1) {
-            ageString += `${months} MONTH${months > 1 ? 'S' : ''}, `;
-        }
-
-        ageString += `${remainingDays} DAY${remainingDays !== 1 ? 'S' : ''}, ${remainingHours} HOUR${remainingHours !== 1 ? 'S' : ''}, ${remainingMinutes} MINUTE${remainingMinutes !== 1 ? 'S' : ''}, ${remainingSeconds} SECOND${remainingSeconds !== 1 ? 'S' : ''}`;
-
-        document.getElementById('runtime').innerText = ageString;
+    if (days < 0) {
+      months -= 1;
+      const previousMonth = new Date(today.getFullYear(), today.getMonth(), 0);
+      days += previousMonth.getDate();
     }
 
-    var date = '2024-10-18T17:00:00.000';
-    updateAge(date);
-    setInterval(() => updateAge(date), 1000);
+    if (months < 0) {
+      years -= 1;
+      months += 12;
+    }
+
+    return `${years} Year${years !== 1 ? 's' : ''}, ${months} Month${months !== 1 ? 's' : ''}, ${days} Day${days !== 1 ? 's' : ''}`;
+  }
+
+  // Set experience based on start date
+  document.addEventListener("DOMContentLoaded", function () {
+    const experienceText = getExperienceDuration("21  Sep 2021");
+    document.getElementById("experience-duration").textContent = experienceText;
+  });
+
 
 </script>
 

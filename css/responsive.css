@@ -163,6 +163,7 @@
     }
 
     #work-experience {
+        overflow-y: none;
         border: none;
     }
     
