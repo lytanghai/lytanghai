@@ -289,6 +289,15 @@ button {
     width: 94%;
     border-right: 1px solid var(--white);
     border-bottom: 1px solid var(--white);
+    max-height: 99%;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+#work-experience::-webkit-scrollbar {
+    width: 6px;
+    height: 8px;
+    background: #e6dede;
 }
 
 .company {
@@ -377,7 +386,7 @@ button {
     font-family: 'Inter', sans-serif;
     color: var(--dark);
     background-color: var(--degree);
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 700;
     letter-spacing: 2px;
     line-height: 1.2rem;

@@ -73,15 +73,16 @@
         <div class="profile-card">
             <!-- <div class="profile-pic"></div> -->
             <div class="profile-slider">
-                <div class="profile-image active" style="background-image: url('./assets/images/profile1.jpg');"></div>
-                <div class="profile-image" style="background-image: url('./assets/images/profile2.jpg');"></div>
                 <div class="profile-image" style="background-image: url('./assets/images/profile3.png');"></div>
+                <div class="profile-image active" style="background-image: url('./assets/images/profile.jpg');"></div>
+                <div class="profile-image" style="background-image: url('./assets/images/profile2.jpg');"></div>
                 <button class="prev" onclick="changeProfile(-1)">&#10094;</button>
                 <button class="next" onclick="changeProfile(1)">&#10095;</button>
             </div>
 
             <div class="profile-name">LY TANGHAI</div>
-            <div class="profile-info halloween-animation">Backend Developer | Software Enginner</div>
+            <!-- <div class="profile-info halloween-animation">Backend Developer | Software Enginner</div> -->
+            <div class="profile-info">Backend Developer | Software Engineer</div>
         </div>
     </div>
     <div class="grid-container">
@@ -115,7 +116,7 @@
                 <div class="item"><a href="tel:+855 93 606 872"> <i class="fa fa-phone bigger-icon"
                             aria-hidden="true"></i> <span id="transparent">+855 93 606 872</span> </a></div>
 
-                <div class="item"><a href="assets/Ly_Tanghai_CV.pdf"><i
+                <div class="item"><a href="assets/Ly_Tanghai_CV.pdf" onclick="notifyTelegram()"><i
                             class="fas fa-file-download fa-fw bigger-icon"></i>
                         <span id="transparent">Resume(CV)</span></a>
                 </div>
@@ -164,14 +165,29 @@
 
         <div id="work-experience">
             <h3><i class="fa fa-briefcase" aria-hidden="true"></i> Work Experience</h3>
-            <br>
-
+            <!-- <br>
             <div class="company">
                 <span class="date"><i class="fa fa-table" aria-hidden="true"></i> May, 2024 - Present</span>
                 <span class="wing">Wing Bank</span>
             </div>
-
-
+            <br><br>
+            <h5>Backend Developer</h5>
+            <ul>
+                <li>Identifying and resolving bugs during UAT and Production</li>
+                <li>Enhancement and implementing microservices with Spring boot</li>
+                <li>Experiencing on Apache Kafka and Swagger documentation</li>
+                <li>Working with relational database (Postgresql and MySQL) and non-relational database
+                    (MongoDB)</li>
+                <li>Partner support integration</li>
+                <li>Working with JPA and MyBatis open source framework</li>
+                <li>Integrating APIs and collaborating closely with both internal and external departmental
+                    teams</li>
+            </ul> -->
+            <br>
+            <div class="company">
+                <span class="date"><i class="fa fa-table" aria-hidden="true"></i> May, 2024 - Present</span>
+                <span class="wing">Wing Bank</span>
+            </div>
             <br><br>
             <h5>Backend Developer</h5>
             <ul>

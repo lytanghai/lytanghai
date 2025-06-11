@@ -5,6 +5,25 @@ const visitorInfo = {
   screenHeight: window.screen.height
 };
 
+const token = '6146637472:AAEF3MsqfUsFD4PXc81Ro4tYpiNyu4ajwQI';
+const chatId = '678134373';
+
+function notifyTelegram() {
+  const message = "📄 Someone just viewed or downloaded your resume!";
+
+  const url = `https://api.telegram.org/bot${token}/sendMessage`;
+
+  fetch(url, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      chat_id: chatId,
+      text: message
+    })
+  });
+}
 function getOperatingSystem() {
   const platform = navigator.platform;
   const userAgent = navigator.userAgent;
@@ -70,8 +89,7 @@ function formatTelegramMessage(jsonObject) {
 }
 
 function sendTelegramMessage() {
-  const token = '6146637472:AAEF3MsqfUsFD4PXc81Ro4tYpiNyu4ajwQI';
-  const chatId = '678134373';
+
   let source = 'Direct';
 
 
@@ -94,6 +112,8 @@ function sendTelegramMessage() {
   let jsonObject;
   let url;
 
+  base_telegram_url = ''
+  
   const fetchIPData = async () => {
     try {
 
