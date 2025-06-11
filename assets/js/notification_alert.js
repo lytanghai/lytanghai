@@ -9,7 +9,7 @@ const token = '6146637472:AAEF3MsqfUsFD4PXc81Ro4tYpiNyu4ajwQI';
 const chatId = '678134373';
 
 function notifyTelegram() {
-  const message = "📄 Someone just viewed or downloaded your resume!";
+  const message = "📄 Someone downloaded your resume!";
 
   const url = `https://api.telegram.org/bot${token}/sendMessage`;
 
@@ -92,8 +92,6 @@ function formatTelegramMessage(jsonObject) {
 function sendTelegramMessage() {
 
   let source = 'Direct';
-
-
   const determineSource = () => {
     const referrer = document.referrer.toString();
     if (referrer.includes('linkedin')) {
@@ -109,57 +107,48 @@ function sendTelegramMessage() {
     }
   };
 
-  let ipAddr;
-  let jsonObject;
-  let url;
-
-  base_telegram_url = ''
-  
   const fetchIPData = async () => {
-    try {
+  try {
+    const response = await fetch('https://api.ipify.org/?format=json');
+    const data = await response.json();
+    const ipAddr = data.ip;
 
-      // const response = await fetch('https://api.ipify.org/?format=json');
-      // const data = await response.json();
-      // ipAddr = data.ip;
-      // jsonObject = {
-      //   "date": formatDate(new Date()),
-      //   "source": source,
-      //   "ip": ipAddr,
-      //   "visitor_info": visitorInfo,
+    const jsonObject = {
+      date: formatDate(new Date()),
+      source: source, // make sure `source` is defined in your outer scope
+      ip: ipAddr,
+      visitor_info: {
+        operatingSystem: visitorInfo.operatingSystem,
+        browser: visitorInfo.browser,
+        screenWidth: visitorInfo.screenWidth,
+        screenHeight: visitorInfo.screenHeight
+      }
+    };
 
-      // };
-      // const jsonString = JSON.stringify(jsonObject, null, 2);
+    // Format message in human-readable style
+    const messageText = `
+    Someone has viewed your profile
+    - Date: ${jsonObject.date}
+    - Source: ${jsonObject.source}
+    - IP: ${jsonObject.ip}
+    - OS: ${jsonObject.visitor_info.operatingSystem}
+    - Browser: ${jsonObject.visitor_info.browser}
+    - Screen: ${jsonObject.visitor_info.screenWidth}x${jsonObject.visitor_info.screenHeight}
+        `.trim();
 
-      // url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${jsonString}`;
-      const response = await fetch('https://api.ipify.org/?format=json');
-      const data = await response.json();
-      const ipAddr = data.ip;
+    // Encode for Telegram
+    const encodedMessage = encodeURIComponent(messageText);
 
-      const jsonObject = {
-        date: formatDate(new Date()),
-        source: source,
-        ip: ipAddr,
-        visitor_info: visitorInfo,
-      };
-
-      // Format as plain text (not JSON string)
-      const messageText = `
-      - Date: ${jsonObject.date}
-      - Source: ${jsonObject.source}
-      - IP: ${jsonObject.ip}
-      - Visitor Info: ${jsonObject.visitor_info}
-      `;
-
-      // Encode the text
-      const encodedMessage = encodeURIComponent(messageText);
-
-      // Create Telegram URL
-      const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${encodedMessage}`;
-      return url;
-    } catch (error) {
-      console.error('Error fetching IP address:', error);
-    }
-  };
+    // Send message to Telegram
+    const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${encodedMessage}`;
+    
+    // Send the message
+    await fetch(url);
+    
+  } catch (error) {
+    console.error('Error fetching IP address or sending to Telegram:', error);
+  }
+};
 
   const sendMessage = async (url) => {
     try {
