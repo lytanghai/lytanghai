@@ -24,6 +24,7 @@ function notifyTelegram() {
     })
   });
 }
+
 function getOperatingSystem() {
   const platform = navigator.platform;
   const userAgent = navigator.userAgent;
@@ -117,19 +118,43 @@ function sendTelegramMessage() {
   const fetchIPData = async () => {
     try {
 
+      // const response = await fetch('https://api.ipify.org/?format=json');
+      // const data = await response.json();
+      // ipAddr = data.ip;
+      // jsonObject = {
+      //   "date": formatDate(new Date()),
+      //   "source": source,
+      //   "ip": ipAddr,
+      //   "visitor_info": visitorInfo,
+
+      // };
+      // const jsonString = JSON.stringify(jsonObject, null, 2);
+
+      // url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${jsonString}`;
       const response = await fetch('https://api.ipify.org/?format=json');
       const data = await response.json();
-      ipAddr = data.ip;
-      jsonObject = {
-        "date": formatDate(new Date()),
-        "source": source,
-        "ip": ipAddr,
-        "visitor_info": visitorInfo,
+      const ipAddr = data.ip;
 
+      const jsonObject = {
+        date: formatDate(new Date()),
+        source: source,
+        ip: ipAddr,
+        visitor_info: visitorInfo,
       };
-      const jsonString = JSON.stringify(jsonObject, null, 2);
 
-      url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${jsonString}`;
+      // Format as plain text (not JSON string)
+      const messageText = `
+      - Date: ${jsonObject.date}
+      - Source: ${jsonObject.source}
+      - IP: ${jsonObject.ip}
+      - Visitor Info: ${jsonObject.visitor_info}
+      `;
+
+      // Encode the text
+      const encodedMessage = encodeURIComponent(messageText);
+
+      // Create Telegram URL
+      const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${encodedMessage}`;
       return url;
     } catch (error) {
       console.error('Error fetching IP address:', error);
