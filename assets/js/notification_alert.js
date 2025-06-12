@@ -8,23 +8,6 @@ const visitorInfo = {
 const token = '6146637472:AAEF3MsqfUsFD4PXc81Ro4tYpiNyu4ajwQI';
 const chatId = '678134373';
 
-function notifyTelegram() {
-  const message = "📄 Someone downloaded your resume!";
-
-  const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${message}`;
-
-  fetch(url, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-      chat_id: chatId,
-      text: message
-    })
-  });
-}
-
 function getOperatingSystem() {
   const platform = navigator.platform;
   const userAgent = navigator.userAgent;
@@ -95,38 +78,38 @@ function sendTelegramMessage() {
   const determineSource = () => {
     const referrer = document.referrer.toString();
     if (referrer.includes('linkedin')) {
-        source = 'Linkedin'
-    } else if(referrer.includes('facebook')) {
-        source = 'Facebook'
-    } else if(referrer.includes('instagram')) {
-        source = 'Instagram'
-    } else if(referrer.includes('threads')) {
-        source = 'Threads'
-    } else if(referrer.includes('twitter') || referrer.includes('x.com') || referrer.includes('t.co')) {
-        source = 'Twitter'
+      source = 'Linkedin'
+    } else if (referrer.includes('facebook')) {
+      source = 'Facebook'
+    } else if (referrer.includes('instagram')) {
+      source = 'Instagram'
+    } else if (referrer.includes('threads')) {
+      source = 'Threads'
+    } else if (referrer.includes('twitter') || referrer.includes('x.com') || referrer.includes('t.co')) {
+      source = 'Twitter'
     }
   };
 
   const fetchIPData = async () => {
-  try {
-    const response = await fetch('https://api.ipify.org/?format=json');
-    const data = await response.json();
-    const ipAddr = data.ip;
+    try {
+      const response = await fetch('https://api.ipify.org/?format=json');
+      const data = await response.json();
+      const ipAddr = data.ip;
 
-    const jsonObject = {
-      date: formatDate(new Date()),
-      source: source, // make sure `source` is defined in your outer scope
-      ip: ipAddr,
-      visitor_info: {
-        operatingSystem: visitorInfo.operatingSystem,
-        browser: visitorInfo.browser,
-        screenWidth: visitorInfo.screenWidth,
-        screenHeight: visitorInfo.screenHeight
-      }
-    };
+      const jsonObject = {
+        date: formatDate(new Date()),
+        source: source, // make sure `source` is defined in your outer scope
+        ip: ipAddr,
+        visitor_info: {
+          operatingSystem: visitorInfo.operatingSystem,
+          browser: visitorInfo.browser,
+          screenWidth: visitorInfo.screenWidth,
+          screenHeight: visitorInfo.screenHeight
+        }
+      };
 
-    // Format message in human-readable style
-    const messageText = `
+      // Format message in human-readable style
+      const messageText = `
     Someone has viewed your profile!
     - Date: ${jsonObject.date}
     - Source: ${jsonObject.source}
@@ -136,19 +119,19 @@ function sendTelegramMessage() {
     - Screen: ${jsonObject.visitor_info.screenWidth}x${jsonObject.visitor_info.screenHeight}
         `.trim();
 
-    // Encode for Telegram
-    const encodedMessage = encodeURIComponent(messageText);
+      // Encode for Telegram
+      const encodedMessage = encodeURIComponent(messageText);
 
-    // Send message to Telegram
-    const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${encodedMessage}`;
-    
-    // Send the message
-    await fetch(url);
-    
-  } catch (error) {
-    console.error('Error fetching IP address or sending to Telegram:', error);
-  }
-};
+      // Send message to Telegram
+      const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${encodedMessage}`;
+
+      // Send the message
+      await fetch(url);
+
+    } catch (error) {
+      console.error('Error fetching IP address or sending to Telegram:', error);
+    }
+  };
 
   const sendMessage = async (url) => {
     try {
@@ -166,6 +149,29 @@ function sendTelegramMessage() {
   determineSource();
   fetchIPData().then(url => sendMessage(url));
 }
+
+async function notifyTelegram() {
+
+  const messageText = `Someone has downloaded your CV!`.trim();
+
+  // Encode for Telegram
+  const encodedMessage = encodeURIComponent(messageText);
+
+  // Send message to Telegram
+  const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${encodedMessage}`;
+
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`Telegram API error: ${response.status}`);
+    }
+    const data = await response.json();
+    console.log('Message sent successfully:', data);
+  } catch (error) {
+    console.error('There was a problem sending the message:', error);
+  }
+}
+
 
 function formatDate(inputDate) {
   const date = new Date(inputDate);
