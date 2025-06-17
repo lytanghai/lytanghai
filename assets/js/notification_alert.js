@@ -1,12 +1,26 @@
+const token = '6146637472:AAEF3MsqfUsFD4PXc81Ro4tYpiNyu4ajwQI';
+const chatId = '678134373';
+
+function shouldNotify(ip) {
+  const lastNotify = JSON.parse(localStorage.getItem('last_notification')) || {};
+  const now = Date.now();
+
+  if (lastNotify[ip] && now - lastNotify[ip] < 10 * 60 * 1000) {
+    return false; // same IP notified recently
+  }
+
+  lastNotify[ip] = now;
+  localStorage.setItem('last_notification', JSON.stringify(lastNotify));
+  return true;
+}
+
+
 const visitorInfo = {
   operatingSystem: getOperatingSystem(),
   browser: detectBrowser(),
   screenWidth: window.screen.width,
   screenHeight: window.screen.height
 };
-
-const token = '6146637472:AAEF3MsqfUsFD4PXc81Ro4tYpiNyu4ajwQI';
-const chatId = '678134373';
 
 function getOperatingSystem() {
   const platform = navigator.platform;
@@ -92,6 +106,11 @@ function sendTelegramMessage() {
 
   const fetchIPData = async () => {
     try {
+      if (!shouldNotify(ipAddr)) {
+        console.log("IP has already been notified recently.");
+        return;
+      }
+
       const response = await fetch('https://api.ipify.org/?format=json');
       const data = await response.json();
       const ipAddr = data.ip;
