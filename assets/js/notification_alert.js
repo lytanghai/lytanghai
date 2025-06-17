@@ -106,14 +106,15 @@ function sendTelegramMessage() {
 
   const fetchIPData = async () => {
     try {
+      
+      const response = await fetch('https://api.ipify.org/?format=json');
+      const data = await response.json();
+      const ipAddr = data.ip;
+
       if (!shouldNotify(ipAddr)) {
         console.log("IP has already been notified recently.");
         return;
       }
-
-      const response = await fetch('https://api.ipify.org/?format=json');
-      const data = await response.json();
-      const ipAddr = data.ip;
 
       const jsonObject = {
         date: formatDate(new Date()),
