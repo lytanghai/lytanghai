@@ -287,7 +287,7 @@ button {
     height: 5%;
     padding: 1%;
     border-radius: 12px;
-    background-color: rgb(26, 112, 43);
+    /* background-color: rgb(26, 112, 43); */
 }
 
 #work-experience {

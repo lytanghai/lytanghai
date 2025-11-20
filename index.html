@@ -28,7 +28,7 @@
     <script src="assets/vendor/jquery/jquery.min.js"></script>
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"  type="text/javascript" ></script>
+    <script src="assets/vendor/php-email-form/validate.js" type="text/javascript"></script>
     <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
     <script src="assets/vendor/counterup/counterup.min.js"></script>
     <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
@@ -73,8 +73,9 @@
         <div class="profile-card">
             <!-- <div class="profile-pic"></div> -->
             <div class="profile-slider">
-                <div class="profile-image active" style="background-image: url('./assets/images/profile3.png');"></div>
-                <div class="profile-image" style="background-image: url('./assets/images/profile.jpg');"></div>
+                <div class="profile-image active" style="background-image: url('./assets/images/profile_img.jfif');">
+                </div>
+                <div class="profile-image" style="background-image: url('./assets/images/profile3.png');"></div>
                 <div class="profile-image" style="background-image: url('./assets/images/profile2.jpg');"></div>
                 <button class="prev" onclick="changeProfile(-1)">&#10094;</button>
                 <button class="next" onclick="changeProfile(1)">&#10095;</button>
@@ -86,7 +87,6 @@
         </div>
     </div>
     <div class="grid-container">
-
         <div id="navigation">
             <div class="items">
                 <div class="nav-bar">
@@ -134,8 +134,8 @@
                 have enjoyed volunteering on various projects, which has exposed me to different cultures and
                 cuisines, contributing to my personal development. ☕</p>
             <div id="announcement">
-                <h3><i class="fa-solid fa-scroll"></i>Information</h3>
-                <h5>Status: <span class="work-status">OPEN TO WORK</span></h5>
+                <h3></i>Information</h3>
+                <!-- <h5>Status: <span class="work-status">OPEN TO WORK</span></h5> -->
                 <h5>Experience: <span id="experience-duration" class="experience-duration"></span></h5>
             </div>
         </div>
@@ -299,14 +299,14 @@
 
         <div id="references">
             <h3><i class="fa-solid fa-user-tie"></i> References</h3>
-            <h5 class="referer">Mr. Sethacheyrithysak Chan</h5>
-            <h5 class="reference_prop"><i class="fa-solid fa-people-line"></i> Position: Senior DevOps Engineer</h5>
-            <h5 class="reference_prop"><i class="fa-solid fa-phone"></i> Mobile Phone : <a href="tel:+855 92 789 294"
+            <!-- <h5 class="referer">Mr. Sethacheyrithysak Chan</h5> -->
+            <!-- <h5 class="reference_prop"><i class="fa-solid fa-people-line"></i> Position: Senior DevOps Engineer</h5> -->
+            <!-- <h5 class="reference_prop"><i class="fa-solid fa-phone"></i> Mobile Phone : <a href="tel:+855 92 789 294"
                     class="phone">
                     +855 92 789 294 </a>
 
             </h5>
-            <h5 class="reference_prop"><i class="fa-solid fa-envelope"></i> E-mail : c.rithysak81@gmail.com</h5>
+            <h5 class="reference_prop"><i class="fa-solid fa-envelope"></i> E-mail : c.rithysak81@gmail.com</h5> -->
         </div>
         <!-- <div id="announcement">
             <h3><i class="fa-solid fa-scroll"></i> Information</h3>
@@ -327,33 +327,33 @@
         profiles[currentProfile].classList.add('active');
     }
 
-     function getExperienceDuration(startDateStr) {
-    const startDate = new Date(startDateStr);
-    const today = new Date();
+    function getExperienceDuration(startDateStr) {
+        const startDate = new Date(startDateStr);
+        const today = new Date();
 
-    let years = today.getFullYear() - startDate.getFullYear();
-    let months = today.getMonth() - startDate.getMonth();
-    let days = today.getDate() - startDate.getDate();
+        let years = today.getFullYear() - startDate.getFullYear();
+        let months = today.getMonth() - startDate.getMonth();
+        let days = today.getDate() - startDate.getDate();
 
-    if (days < 0) {
-      months -= 1;
-      const previousMonth = new Date(today.getFullYear(), today.getMonth(), 0);
-      days += previousMonth.getDate();
+        if (days < 0) {
+            months -= 1;
+            const previousMonth = new Date(today.getFullYear(), today.getMonth(), 0);
+            days += previousMonth.getDate();
+        }
+
+        if (months < 0) {
+            years -= 1;
+            months += 12;
+        }
+
+        return `${years} Year${years !== 1 ? 's' : ''}, ${months} Month${months !== 1 ? 's' : ''}, ${days} Day${days !== 1 ? 's' : ''}`;
     }
 
-    if (months < 0) {
-      years -= 1;
-      months += 12;
-    }
-
-    return `${years} Year${years !== 1 ? 's' : ''}, ${months} Month${months !== 1 ? 's' : ''}, ${days} Day${days !== 1 ? 's' : ''}`;
-  }
-
-  // Set experience based on start date
-  document.addEventListener("DOMContentLoaded", function () {
-    const experienceText = getExperienceDuration("21  Sep 2021");
-    document.getElementById("experience-duration").textContent = experienceText;
-  });
+    // Set experience based on start date
+    document.addEventListener("DOMContentLoaded", function () {
+        const experienceText = getExperienceDuration("21 Sep 2021");
+        document.getElementById("experience-duration").textContent = experienceText;
+    });
 
 
 </script>
